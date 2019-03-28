@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="TravelApp.Views.FindDeals2View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TravelApp.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush  ImageSource="Images/pexels-photo.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="170"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Margin="10 10 0 0" Text="{Binding Useful.Departuredate}" FontWeight="Bold" FontFamily="Segoe UI" HorizontalAlignment="Left"  Grid.Row="0"></TextBlock>
+        <TextBlock Margin="0 10 10 0" FontFamily="Segoe UI" FontWeight="Bold" HorizontalAlignment="Right" Grid.Row="0">all times are local</TextBlock>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center">
+            <Border BorderThickness="2"  BorderBrush="Gray" Margin="10 10 10 10" Padding="10 10 10 10">
+                
+            <StackPanel Height="120" Orientation="Horizontal" VerticalAlignment="Center">
+                <Image Width="100" Height="80" Source="{Binding Useful.Photo}"/>
+                <StackPanel VerticalAlignment="Center" Width="175">
+                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 10" Text="{Binding Useful.OriginPlace}" FontSize="15"/>
+                        <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 10" Text="{Binding Useful.Departuretime}" FontSize="15"/>
+                </StackPanel>
+                <StackPanel Width="100" VerticalAlignment="Center">
+                    <TextBlock HorizontalAlignment="Center"  FontFamily="Segoe UI" Margin="10 18 10 0" Text="{Binding Useful.Duration}" FontSize="13" />
+                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 0 10 10" Text="{Binding Useful.Mode}" FontSize="13"/>
+                </StackPanel >
+                <StackPanel Width="175" VerticalAlignment="Center">
+                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 10" Text="{Binding Useful.DestPlace}" FontSize="15"/>
+                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 10" Text="{Binding Useful.Arrival}" FontSize="15"/>
+                </StackPanel>
+ 
+            </StackPanel>
+            </Border>
+        </StackPanel>
+
+        <ListBox  Grid.Row="2"  Name="lb" ItemsSource="{Binding Path=Agents}" SelectedItem="{Binding SelectedIt, Mode=TwoWay}">
+         
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="BorderBrush" Value="Gray"/>
+                    <Setter Property="Margin" Value="10 10 10 10"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+
+                        <StackPanel  Orientation="Horizontal" VerticalAlignment="Center">
+                            <StackPanel Orientation="Vertical" >
+
+                                <Image Width="100" Source="{Binding Agent.ImageUrl}"/>
+                                <TextBlock Margin="10 0 10 10" Text="{Binding Agent.Name}" FontSize="14" FontWeight="Bold" FontFamily="Segoe UI"/>
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+
+                                <TextBlock FontWeight="Bold" FontFamily="Segoe UI" Margin="400 25 10 10" Text="{Binding Price}" FontSize="15"/>
+                                <Button  Width="100" Height="40" Foreground="White" BorderBrush="Transparent" Background="#17C434" Margin="10 0 10 10" HorizontalAlignment="Right" FontFamily="Segoe UI" FontSize="15">Select</Button>
+                            </StackPanel>
+
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>

@@ -1,0 +1,167 @@
+﻿<UserControl x:Class="TravelApp.Views.WelcomeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TravelApp.Views"
+        mc:Ignorable="d"
+       Height="450" Width="800">
+
+    <Grid Background="Wheat">
+
+        <Image Source="Images/shutterstock-697034635.jpg" Stretch="Fill"/>
+
+        <StackPanel Width="600" Height="80" Margin="140,-200,100,100">
+            <TextBlock Text="Welcome to SkyVel" FontFamily="Segoe UI"  FontWeight="Light" Foreground="White" HorizontalAlignment="Center" FontSize="60" Width="600"/>
+        </StackPanel>
+
+        <Canvas>
+
+
+            <StackPanel Panel.ZIndex="2"  x:Name="Archive" Background="Transparent" Height="35" Width="145" Margin="-95,280,0,0">
+                <StackPanel.Style>
+                    <Style TargetType="StackPanel">
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Green"/>
+                            </Trigger>
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                <EventTrigger.Actions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="-95,280,0,0" To="0,280,0,0" DecelerationRatio=".9" Duration="0:0:1"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+
+                                </EventTrigger.Actions>
+                            </EventTrigger>
+
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                <EventTrigger.Actions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0,280,0,0" To="-95,280,0,0" DecelerationRatio=".9" Duration="0:0:1"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger.Actions>
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+
+                </StackPanel.Style>
+
+
+                <DockPanel VerticalAlignment="Center" HorizontalAlignment="Right" Width="140" Height="35">
+                    <Label  Width="85" Content="Archive" VerticalAlignment="Center" FontFamily="Segoe UI Semibold" />
+                    <Image Source="Images\archive.png"  Width="20" Height="35"    Margin="20,0,10,0" />
+
+                </DockPanel>
+
+
+
+            </StackPanel>
+
+
+            <StackPanel Panel.ZIndex="2"  x:Name="Settings" Background="Transparent" Height="35" Width="145" Margin="-95,315,0,0">
+                <StackPanel.Style>
+                    <Style TargetType="StackPanel">
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Green"/>
+                            </Trigger>
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                <EventTrigger.Actions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="-95,315,0,0" To="0,315,0,0" DecelerationRatio=".9" Duration="0:0:1"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+
+                                </EventTrigger.Actions>
+                            </EventTrigger>
+
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                <EventTrigger.Actions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0,315,0,0" To="-95,315,0,0" DecelerationRatio=".9" Duration="0:0:1"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger.Actions>
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+
+                </StackPanel.Style>
+
+
+                <DockPanel VerticalAlignment="Center" HorizontalAlignment="Right" Width="140" Height="35">
+                    <Label  Width="85" Content="Settings" VerticalAlignment="Center" FontFamily="Segoe UI Semibold" />
+                    <Image Source="Images\settings.png"  Width="20" Height="35"    Margin="20,0,10,0" />
+
+                </DockPanel>
+
+
+
+            </StackPanel>
+
+
+            <StackPanel Panel.ZIndex="2"  x:Name="nokte" Background="Transparent" Height="35" Width="145" Margin="-95,350,0,0">
+                <StackPanel.Style>
+                    <Style TargetType="StackPanel">
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Green"/>
+                            </Trigger>
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                <EventTrigger.Actions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="-95,350,0,0" To="0,350,0,0" DecelerationRatio=".9" Duration="0:0:1"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+
+                                </EventTrigger.Actions>
+                            </EventTrigger>
+
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                <EventTrigger.Actions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0,350,0,0" To="-95,350,0,0" DecelerationRatio=".9" Duration="0:0:1"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger.Actions>
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+
+                </StackPanel.Style>
+
+
+                <DockPanel VerticalAlignment="Center" HorizontalAlignment="Right"   Width="140" Height="35">
+                    <Label  Width="85" Content="***" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI Semibold" />
+                    <Image Source="Images\information.png"  Width="20" Height="35"    Margin="20,0,10,0" />
+
+                </DockPanel>
+
+
+
+            </StackPanel>
+
+
+        </Canvas>
+
+        <Button  x:Name="button" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Command="{Binding StartCommand}" Background="Wheat" BorderBrush="Transparent" FontSize="25" FontWeight="Bold" Width="80" Height="80" Margin="559,250,161,120" >
+
+
+            Start
+
+        </Button>
+
+    </Grid>
+
+</UserControl>

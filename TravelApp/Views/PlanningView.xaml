@@ -1,0 +1,235 @@
+﻿<UserControl x:Class="TravelApp.Views.PlanningView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:view="clr-namespace:TravelApp"
+             xmlns:local="clr-namespace:TravelApp.Views"
+             xmlns:viewModel = "clr-namespace:TravelApp.ViewModels" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <!--<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="PLAN YOUR DAYS"/>
+        <TextBlock Grid.Row="1"/>
+        <ScrollViewer Grid.Row="2">
+            <ItemsControl ItemsSource="{Binding Path=plans}" Name="llist">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <CheckBox  Grid.Column="0" />
+                            <TextBox IsEnabled="{Binding RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}, Path=DataContext.Editable , Mode=TwoWay}" Background="White" FontWeight="Bold"  Foreground="Red" Grid.Column="1" Text="{Binding place}" />
+                            <TextBox IsEnabled="False" Grid.Column="2" Text="{Binding time}"/>
+                            <TextBox Grid.Column="3"  Text="{Binding price}"/>
+                            <Button Grid.Column="4" Content="Edit" Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}, Path=DataContext.EditCommand}" />
+
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+        <Button Grid.Row="3" Content="Add" Command="{Binding AddCommand}" />
+    </Grid>-->
+    <Grid>
+        <StackPanel>
+            <StackPanel.Background>
+                <ImageBrush ImageSource="Images/paris.jpg"/>
+            </StackPanel.Background>
+            <!--About-->
+            <Grid Height="100">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Row="0" Grid.Column="0"
+                   HorizontalAlignment="Center"
+                   Source="Images/customer-service.png" Margin="0 5 0 0"/>
+                <TextBlock Text="Nicat" Grid.Row="1" Grid.Column="0" FontSize="20"
+                       HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                <TextBlock Text="TRIP TO PARIS" Grid.RowSpan="2" Grid.Column="1" 
+                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                       FontSize="25" Foreground="White"/>
+                <TextBlock Text="$5000" Grid.Row="0" Grid.Column="2" Foreground="LightGray" FontSize="20"
+                       VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                <TextBlock Text="12.03.19" Grid.Row="1" Grid.Column="2" Foreground="White" FontSize="20"
+                       VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Grid>
+            <!--Day Buttons-->
+            <Grid Height="40">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Opacity="0.5" Grid.Column="0" Content="day 1" BorderThickness="0" FontSize="20" Background="Black" Foreground="White"/>
+                <Button Opacity="0.5" Grid.Column="1" Content="day 2" BorderThickness="0" FontSize="20" Background="Black" Foreground="White"/>
+                <Button Opacity="0.5" Grid.Column="2" Content="day 3" BorderThickness="0" FontSize="20" Background="Black" Foreground="White"/>
+            </Grid>
+            <!--Add and edit button-->
+            <Grid Height="80">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border BorderBrush="Black" 
+                    Height="50" Width="150"
+                    Background="Transparent" 
+                    CornerRadius="25" BorderThickness="1">
+                    <Button Width="100" 
+                        Height="45" 
+                        Content="ADD+" Background="Transparent" FontSize="20" 
+                        Margin="10 0 10 0" BorderThickness="0" Foreground="White"
+                        VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+
+                <Border BorderBrush="Black" Grid.Column="1"
+                    Height="50" Width="150"
+                    Background="Transparent" 
+                    CornerRadius="25" BorderThickness="1">
+                    <Button Width="100" 
+                        Height="45" 
+                        Content="EDIT" Background="Transparent" Foreground="White"
+                        Margin="10 0 10 0" BorderThickness="0" FontSize="20"
+                        VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+            </Grid>
+            <!--Flight Listbox-->
+            <Grid Height="100" Margin="5 10 5 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="Images/plane.png" Margin="25"/>
+                <ListBox Grid.Column="1" Background="Transparent" BorderThickness="0">
+                    <ListBoxItem>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="Images/placeholder.png" Width="50" Height="25"/>
+                            <TextBlock Grid.Column="1" Text="{Binding pla}"
+                                   FontSize="20" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ListBoxItem>
+                    <ListBoxItem >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="Images/clock.png" Width="50" Height="20"/>
+                            <TextBlock Grid.Column="1" Text="{Binding at}"
+                                   FontSize="20" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ListBoxItem>
+                </ListBox>
+            </Grid>
+            <!--Museum Listbox-->
+            <Grid Height="100" Margin="5 10 5 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="Images/museum.png" Margin="25"/>
+                <ListBox Grid.Column="1" Background="Transparent" BorderThickness="0">
+                    <ListBoxItem>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="Images/placeholder.png" Width="50" Height="25"/>
+                            <TextBlock Grid.Column="1" Text="Museum"
+                                   FontSize="20" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="Images/clock.png" Width="50" Height="20"/>
+                            <TextBlock Grid.Column="1" Text="21:13 - 22:12"
+                                   FontSize="20" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="Images/coin.png" Width="50" Height="20"/>
+                            <TextBlock Grid.Column="1" Text="$ 12"
+                                   FontSize="20" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ListBoxItem>
+                </ListBox>
+            </Grid>
+            <!--Restaurant Listbox-->
+            <Grid Height="100" Margin="5 55 5 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="Images/fork.png" Margin="25"/>
+                <ListBox Grid.Column="1" Background="Transparent" BorderThickness="0">
+                    <ListBoxItem>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="Images/placeholder.png" Width="50" Height="25"/>
+                            <TextBlock Grid.Column="1" Text="Restaurant"
+                                   FontSize="20" VerticalAlignment="Center" Foreground="Black"/>
+                        </Grid>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="Images/clock.png" Width="50" Height="20"/>
+                            <TextBlock Grid.Column="1" Text="21:13 - 22:12"
+                                   FontSize="20" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="Images/coin.png" Width="50" Height="20"/>
+                            <TextBlock Grid.Column="1" Text="No Information"
+                                   FontSize="20" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ListBoxItem>
+                </ListBox>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>

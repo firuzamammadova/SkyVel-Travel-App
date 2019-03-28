@@ -1,0 +1,93 @@
+﻿<UserControl x:Class="TravelApp.Views.FlightView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TravelApp.Views"
+             xmlns:local1="clr-namespace:TravelApp.ViewModels"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:behaviors="clr-namespace:WPFTextBoxAutoComplete;assembly=WPFTextBoxAutoComplete"
+             mc:Ignorable="d" 
+            
+             d:DesignHeight="550" d:DesignWidth="800">
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type local1:FindDealsViewModel}">
+            <local:FindDeals />
+        </DataTemplate>
+    </UserControl.Resources>
+
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images\blue-sky-clouds-flying-55787.jpg"/>
+        </Grid.Background>
+        <StackPanel Width="600" Height="500">
+            <TextBlock  Foreground="White" Text="Hello travelers. Where would you like to go?" HorizontalAlignment="Center" VerticalAlignment="Center"
+                       FontSize="30" FontStyle="Italic"/>
+            <Grid Margin="5 35 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <!--From-To-->
+                <TextBlock   Grid.Row="0" Grid.Column="0" Text="From:" FontSize="20" Padding="5" Foreground="White"/>
+                <TextBlock  Grid.Row="0" Grid.Column="1" Text="To:" FontSize="20" Margin="20 0 0 0" Padding="5" Foreground="White"/>
+                <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Airplane" Height="35" Width="30" VerticalAlignment="Bottom" Margin="0 0 10 0"/>
+                    <TextBox Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  behaviors:AutoCompleteBehavior.AutoCompleteItemsSource="{Binding lp}"  Margin="0 0 5 0" materialDesign:HintAssist.Hint="Enter your place" Width="250" FontSize="20" Foreground="White"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                    <Image Source="/Images\airplane-mode-on-symbol.png" Height="25" Width="30" VerticalAlignment="Bottom" Margin="0 0 5 5"/>
+                    <TextBox Text="{Binding Destination, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0 0 5 0" materialDesign:HintAssist.Hint="Enter your place" Width="250" FontSize="20" Foreground="White"/>
+                </StackPanel>
+            </Grid>
+            <!--Radiobutton-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <RadioButton Grid.Column="0" Margin="35 20 0 0" Content="Round-trip" Foreground="White" FontSize="15"/>
+                <RadioButton Grid.Column="1" Margin="50 20 0 0" Content="One way" Foreground="White" FontSize="15"/>
+            </Grid>
+            <!--DateTime Labels-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Margin="35 20 0 0" Text="Start time:"  FontSize="20" Foreground="White"/>
+                <TextBlock Grid.Column="1" Margin="50 20 0 0" Text="End time:" FontSize="20" Foreground="White"/>
+            </Grid>
+            <!--DateTimes-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300*"/>
+                    <ColumnDefinition Width="103*"/>
+                    <ColumnDefinition Width="197*"/>
+                </Grid.ColumnDefinitions>
+                <DatePicker Text="{Binding StartTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="0" Margin="30 20 0 0" Foreground="White"/>
+                <DatePicker Text="{Binding EndTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Margin="50 20 0 0" Foreground="White" Grid.ColumnSpan="2"/>
+            </Grid>
+            <!--ComboBox-->
+            <ComboBox Margin="30 20 0 0"/>
+            <!--Search-->
+
+
+            <Button Margin="30 20 0 0" Height="45" Content="Find deals"
+                        Command="{Binding FindCommand}" FontStretch="Normal">
+
+            </Button>
+
+
+
+
+            <CheckBox  Content="Receive our travel deals newsletter" Margin="30 20 0 0" FontSize="15" Foreground="White"/>
+            <ContentControl Content="{Binding CurrentPageViewModel}" />
+        </StackPanel>
+    </Grid>
+</UserControl>

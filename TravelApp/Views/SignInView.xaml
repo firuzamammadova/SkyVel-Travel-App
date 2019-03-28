@@ -1,0 +1,129 @@
+﻿<UserControl x:Class="TravelApp.Views.SignInView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TravelApp.Views"
+              xmlns:local2="clr-namespace:TravelApp"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <Rectangle RadiusY="8" 
+                   RadiusX="8" Fill="White"/>
+        <Image Source="Images/pexels-photo.jpeg" Stretch="Fill"/>
+        <StackPanel 
+            Margin="20,10,250,10">
+            <Label 
+                Content="Skyvel" 
+                FontFamily="Segoe UI Black" 
+                FontSize="24" 
+                Foreground="White" 
+                Margin="0,10" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left"/>
+            <StackPanel 
+                Margin="0,15" 
+                Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Account" 
+                                         VerticalAlignment="Center" 
+                                         Foreground="White"/>
+                <TextBox Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    materialDesign:HintAssist.Hint="Username" 
+                         Foreground="White" 
+                         FontWeight="Bold"  
+                         Width="300" 
+                         Margin="5"/>
+            </StackPanel>
+            <StackPanel 
+                Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Key" 
+                                         Foreground="White" 
+                                         VerticalAlignment="Center"/>
+                <TextBox Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Password" 
+                             Foreground="White" 
+                             FontWeight="Bold" 
+                             Width="300" 
+                             Margin="5"/>
+            </StackPanel>
+            <Grid>
+                <CheckBox 
+                    Background="White" 
+                    Content="Save password" 
+                    Foreground="White" 
+                    Margin="0 18 0 0"
+                    FontWeight="Bold"/>
+                <Button 
+                    Content="Forget your password?" 
+                    HorizontalAlignment="Right" 
+                    Margin="0,19,211,-1" Width="155" 
+                    FontSize="12" 
+                    Background="Transparent" 
+                    BorderBrush="Transparent" 
+                    FontWeight="Bold"
+                    Foreground="White"/>
+            </Grid>
+            <StackPanel Orientation="Horizontal" 
+                        Margin="0 18 0 0">
+                <Button 
+                        HorizontalAlignment="Right"  
+                        Content="LOGIN" 
+                    FontFamily="Impact" 
+                    FontSize="18" 
+                    Width="100" 
+                    Background="#FF307CD6" 
+                    BorderBrush="#FF307CD6"
+                    Command="{Binding SignInCommand}"/>
+                
+                <Button 
+                    Command="{Binding RegisterCommand}"
+                    HorizontalAlignment="Left" 
+                    Margin="70 0 0 0" 
+                    Content="SIGN UP" 
+                    FontFamily="Impact" 
+                    FontSize="18" 
+                    Width="100" 
+                    Background="#FF307CD6" 
+                    BorderBrush="#FF307CD6"/>
+            </StackPanel>
+            <StackPanel 
+                Orientation="Horizontal" 
+                Margin="10,40">
+                <Label 
+                    Content="or Login with" 
+                    Foreground="White" 
+                    VerticalAlignment="Center"/>
+                <Button 
+                    HorizontalAlignment="Center" 
+                    FontFamily="Impact" 
+                    FontSize="18" 
+                    Background="#FF3D56AC" 
+                    BorderBrush="#FF3D56AC">
+                    <materialDesign:PackIcon Kind="Facebook" 
+                                             VerticalAlignment="Center"
+                                             Foreground="White"/>
+                </Button>
+                <Button HorizontalAlignment="Center" 
+                        FontFamily="Impact" 
+                        FontSize="18" 
+                        Margin="15,0" 
+                        Background="#FF01BAFF" 
+                        BorderBrush="#FF01BAFF">
+                    <materialDesign:PackIcon Kind="Twitter" 
+                                             VerticalAlignment="Center" 
+                                             Foreground="White"/>
+                </Button>
+                <Button HorizontalAlignment="Center"
+                        FontFamily="Impact" 
+                        FontSize="18" 
+                        Background="#FFE05959" 
+                        BorderBrush="#FFE05959">
+                    <materialDesign:PackIcon Kind="GooglePlus" 
+                                             VerticalAlignment="Center" 
+                                             Foreground="White"/>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>
