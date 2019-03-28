@@ -15,12 +15,19 @@ namespace TravelApp.ViewModels
         public ICommand PlanCommand { get; set; }
         public ICommand StCommand { get; set; }
         public ICommand FlCommand { get; set; }
+        public ICommand HotelCommand { get; set; }
         public SlideViewModel()
         {
             EntCommand = new DelegateCommand(OnEntExecute, OnEntCanExecute);
             PlanCommand = new DelegateCommand(OnPlanExecute, OnEntCanExecute);
             FlCommand = new DelegateCommand(OnFlExecute, OnEntCanExecute);
             StCommand = new DelegateCommand(OnStExecute, OnEntCanExecute);
+            HotelCommand = new DelegateCommand(OnHotelExecute, OnEntCanExecute);
+        }
+
+        private void OnHotelExecute()
+        {
+            HotelSuccessfullyEvent();
         }
 
         private void OnFlExecute()
@@ -44,6 +51,8 @@ namespace TravelApp.ViewModels
         }
         public delegate void EntSuccessfullyHandler();
         public event EntSuccessfullyHandler EntSuccessfullyEvent;
+        public delegate void HotelSuccessfullyHandler();
+        public event HotelSuccessfullyHandler HotelSuccessfullyEvent;
         public delegate void FlSuccessfullyHandler();
         public event FlSuccessfullyHandler FlSuccessfullyEvent;
         public delegate void StSuccessfullyHandler();

@@ -7,7 +7,54 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <ScrollViewer>
+        <ListBox  ItemsSource="{Binding Path=Hotels}" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="120" Margin="5 10 5 0">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <StackPanel Height="120" Orientation="Horizontal" VerticalAlignment="Center">
+                                <Image Width="100" Height="80" Source="{Binding photo}"/>
+                                <StackPanel VerticalAlignment="Center" Width="175">
+                                    <TextBlock Foreground="#052c6b" FontSize="15" FontWeight="SemiBold" FontStyle="Italic" TextWrapping="Wrap" Margin="10 30 0 0" Text="{Binding Name}"></TextBlock>
+                                    <TextBlock Foreground="#052c6b" Margin="10 70 0 0" FontSize="15" FontWeight="SemiBold"  FontStyle="Italic" Text="{Binding Address}"></TextBlock>
+                                   
+                                    <!--<TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 10" Text="{Binding OriginPlace}" FontSize="15"/>
+                                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 10" Text="{Binding Departuretime}" FontSize="15"/>-->
+                                </StackPanel>
+                                <!--<StackPanel Width="100" VerticalAlignment="Center">
+                                    <TextBlock HorizontalAlignment="Center" FontFamily="Segoe UI" Margin="10 18 10 0" Text="{Binding Duration}" FontSize="13" />
+                                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 0 10 10" Text="{Binding Mode}" FontSize="13"/>
+                                </StackPanel >
+                                <StackPanel Width="175" VerticalAlignment="Center">
+                                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 10" Text="{Binding DestPlace}" FontSize="15"/>
+                                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 10" Text="{Binding Arrival}" FontSize="15"/>
+                                </StackPanel>-->
+                                <StackPanel Width="175" VerticalAlignment="Center">
+                                    <Button HorizontalAlignment="Center" Command="{Binding ChoCommand}" Content="Choose" Background="#052c6b" Foreground="White" Height="40" FontFamily="Segoe UI" FontSize="15" Width="130" Grid.Row="0" Grid.Column="2" />
+                                    <TextBlock HorizontalAlignment="Center" FontSize="20" FontStyle="Italic" FontWeight="SemiBold" FontFamily="Segoe UI" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Text="{Binding Price}"></TextBlock>
+                              
+                                    <!--<TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 18 10 0" Text="{Binding Price}" FontSize="15" ></TextBlock>
+                                    <TextBlock HorizontalAlignment="Center" FontFamily="Segoe UI" Margin="10 0 10 10" Text="{Binding Deals}" FontSize="15" ></TextBlock>
+                                    <Button Width="80" Foreground="White" BorderBrush="Transparent" Background="#052860" Margin="10 0 10 10" HorizontalAlignment="Center" FontFamily="Segoe UI" Height="35" FontSize="15" >Select</Button>-->
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Height="100" VerticalAlignment="Center">
+
+                           
+
+                                <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
+
+                            </StackPanel>
+
+                        </StackPanel>
+
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!--<ScrollViewer>
             <StackPanel>
                 <Grid Height="120" Margin="5 10 5 0">
                     <Grid.RowDefinitions>
@@ -26,7 +73,8 @@
                     <TextBlock FontSize="20" FontStyle="Italic" FontWeight="SemiBold" FontFamily="Segoe UI" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">Price : 190 $</TextBlock>
                 </Grid>
 
-                <Grid Height="120" Margin="5 10 5 0">
+                -->
+        <!--<Grid Height="120" Margin="5 10 5 0">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
@@ -144,8 +192,9 @@
                     <TextBlock Foreground="#052c6b" Grid.RowSpan="2" Grid.Row="0"  Grid.Column="1" Margin="10 70 0 0" FontSize="15" FontWeight="SemiBold"  FontStyle="Italic" >Address : 12 Touareg Berrima, 40040 Marrakech, Morocco</TextBlock>
                     <Button Content="Choose" Background="#052c6b" Height="40" FontFamily="Segoe UI" FontSize="14" Width="130" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center"/>
                     <TextBlock FontSize="20" Grid.Row="1" FontStyle="Italic" FontWeight="SemiBold" FontFamily="Segoe UI" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">Price : 198 $</TextBlock>
-                </Grid>
+                </Grid>-->
+        <!--
             </StackPanel>
-        </ScrollViewer>
+        </ScrollViewer>-->
     </Grid>
 </UserControl>

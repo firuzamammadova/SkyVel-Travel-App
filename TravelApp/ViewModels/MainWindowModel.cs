@@ -82,6 +82,7 @@ namespace TravelApp.ViewModels
             SlideViewModel.PlanSuccessfullyEvent += new SlideViewModel.PlanSuccessfullyHandler(myPlansuccesfullyHandler);
             SlideViewModel.StSuccessfullyEvent += new SlideViewModel.StSuccessfullyHandler(myStsuccesfullyHandler);
             SlideViewModel.FlSuccessfullyEvent += new SlideViewModel.FlSuccessfullyHandler(myFlsuccesfullyHandler);
+            SlideViewModel.HotelSuccessfullyEvent += new SlideViewModel.HotelSuccessfullyHandler(myHotelsuccesfullyHandler);
 			SignInViewModel.SignSuccessfullyEvent += new SignInViewModel.SignSuccessfullyHandler(mySignSuccessfullyHandler);
 			SignInViewModel.RegisterSuccessfullyEvent += new SignInViewModel.RegisterSuccessfullyHandler(myRegisterSuccessfullyHandler);
 			WelcomeViewModel.StartSuccessfullyEvent += new WelcomeViewModel.StartSuccessfullyHandler(myStartHandler);
@@ -95,6 +96,11 @@ namespace TravelApp.ViewModels
 
 		//450 800
 		}
+
+        private void myHotelsuccesfullyHandler()
+        {
+            CurrentView = HotelViewModel;
+        }
 
         private void myChoSuccessfullyHandler()
         {

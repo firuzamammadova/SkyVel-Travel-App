@@ -58,6 +58,7 @@
     <Compile Include="Flight.cs" />
     <Compile Include="FlightNumbe.cs" />
     <Compile Include="Gender.cs" />
+    <Compile Include="HotelInfo.cs" />
     <Compile Include="Info.cs" />
     <Compile Include="Itinerary.cs" />
     <Compile Include="Leg.cs" />
