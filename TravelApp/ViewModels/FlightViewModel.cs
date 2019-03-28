@@ -4,6 +4,7 @@ using Prism.Events;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -33,7 +34,9 @@ namespace TravelApp.ViewModels
             flight = new Flight();
             TextEvent += new TextHandler(ListPlaces);
             _eventAggregator = eventAggregator;
-           
+
+            EndTime = DateTime.Today;
+            StartTime = DateTime.Today;
            // _eventAggregator.GetEvent<PostEvent>().Subscribe(OnOpenFriendDetailView);
 
 
@@ -79,8 +82,12 @@ namespace TravelApp.ViewModels
 
             create();
             _eventAggregator.GetEvent<PostEvent>().Publish(ms);
-            FindSuccessfullyEvent();
-           // TextEvent();
+           //  MessageBox.Show(flight.StartTime.ToString("s").Split('T').First());
+            //  MessageBox.Show(flight.StartTime.ToString());
+
+          //  MessageBox.Show(DateTime.ParseExact(flight.StartTime.ToString().Split(' ').First(), "yyyy-MM-dd", new CultureInfo("en-US", true)).ToString());
+           FindSuccessfullyEvent();
+          // TextEvent();
         }
 
 

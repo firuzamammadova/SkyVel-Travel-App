@@ -88,7 +88,7 @@ xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Inte
             <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Height="100" HorizontalAlignment="Center">
                 <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Width="50" Height="50" Margin="10">
                     <!--<Image Source="C:\Users\cavid\Desktop\son versiya\TravelApp\Images\settings.png" Width="30" Height="30"/>-->
-                    <materialDesign:PackIcon Kind="Settings" Foreground="Wheat"  Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                    <materialDesign:PackIcon Kind="Settings" Foreground="Wheat" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
 
                 </Button>
                 <Button x:Name="button" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" BorderBrush="{x:Null}" Padding="0" Width="80" Height="80" Margin="10" RenderTransformOrigin="0.5,0.5">
@@ -106,7 +106,7 @@ xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Inte
                 </Button>
                 <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Width="50" Height="50" Margin="10" >
                     <!--<Image Source="C:\Users\cavid\Desktop\son versiya\TravelApp\Images\info.png" Width="30" Height="30"/>-->
-                    <materialDesign:PackIcon Kind="Information" Foreground="Wheat" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                    <materialDesign:PackIcon Kind="Logout" Foreground="Wheat" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
 
                 </Button>
             </StackPanel>
@@ -123,7 +123,7 @@ xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Inte
                     <StackPanel Orientation="Horizontal" Margin="10 0">
                         <!--<Image Source="C:\Users\cavid\Desktop\son versiya\TravelApp\Images\world.png" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>-->
                         <materialDesign:PackIcon Kind="Power" Foreground="Wheat" Width="30" Height="30" VerticalAlignment="Center" Margin="5" />
-                        <Button Content="Start" Foreground="Wheat" Margin="10"  VerticalAlignment="Center"  Background="{x:Null}" BorderBrush="{x:Null}" Command="{Binding StCommand}" />
+                        <Button Content="Start" Foreground="Wheat" Margin="10" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Command="{Binding StCommand}" />
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem x:Name="listViewItem3" Height="50" RenderTransformOrigin="0.5,0.5">
@@ -190,7 +190,7 @@ xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Inte
                         <Button Content="Plan" Foreground="Wheat" Margin="10" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Command="{Binding PlanCommand}"/>
                     </StackPanel>
                 </ListViewItem>
-                <ListViewItem x:Name="listViewItem4" Height="50" RenderTransformOrigin="0.5,0.5">
+                <ListViewItem x:Name="listViewItem4" Height="55" RenderTransformOrigin="0.5,0.5">
                     <ListViewItem.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -209,23 +209,6 @@ xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Inte
                 </ListViewItem>
 
 
-                <ListViewItem x:Name="listViewItem6" Height="50" RenderTransformOrigin="0.5,0.5">
-                    <ListViewItem.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </ListViewItem.RenderTransform>
-                    <StackPanel Orientation="Horizontal" Margin="10 0">
-                        <!--<Image Source="C:\Users\cavid\Desktop\son versiya\TravelApp\Images\settings.png" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>-->
-                        <materialDesign:PackIcon Kind="Logout" Foreground="Wheat" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-
-                        <Button Content="Logout" Foreground="Wheat" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10" VerticalAlignment="Center"/>
-                    </StackPanel>
-
-                </ListViewItem>
 
             </ListView>
         </StackPanel>

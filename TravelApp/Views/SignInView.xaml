@@ -29,7 +29,7 @@
                 <materialDesign:PackIcon Kind="Account" 
                                          VerticalAlignment="Center" 
                                          Foreground="White"/>
-                <TextBox Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                <PasswordBox PasswordChar="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                     materialDesign:HintAssist.Hint="Username" 
                          Foreground="White" 
                          FontWeight="Bold"  
@@ -72,8 +72,8 @@
                     FontFamily="Impact" 
                     FontSize="18" 
                     Width="100" 
-                    Background="#FF307CD6" 
-                    BorderBrush="#FF307CD6"
+                    Background="#052860" 
+                    BorderBrush="Transparent"
                     Command="{Binding SignInCommand}"/>
                 
                 <Button 
@@ -84,7 +84,7 @@
                     FontFamily="Impact" 
                     FontSize="18" 
                     Width="100" 
-                    Background="#FF307CD6" 
+                    Background="#052860" 
                     BorderBrush="#FF307CD6"/>
             </StackPanel>
             <StackPanel 

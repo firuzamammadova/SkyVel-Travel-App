@@ -13,10 +13,12 @@ namespace FindDeals
 		public string Price { get; set; }
         public string OriginPlace { get; set; }
         public string DestPlace { get; set; }
+        public string Destcity { get; set; }
         public string Duration { get; set; }
 		public string Departuredate { get; set; }
 		public string Departuretime { get; set; }
 		public string Arrival { get; set; }
+		public string ArrivalDate { get; set; }
 		public string Mode { get; set; }
 		public string Photo { get; set; }
 		public string Deals { get; set; }

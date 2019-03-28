@@ -7,6 +7,7 @@
              xmlns:local1="clr-namespace:TravelApp.ViewModels"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:behaviors="clr-namespace:WPFTextBoxAutoComplete;assembly=WPFTextBoxAutoComplete"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
             
              d:DesignHeight="550" d:DesignWidth="800">
@@ -70,11 +71,138 @@
                     <ColumnDefinition Width="103*"/>
                     <ColumnDefinition Width="197*"/>
                 </Grid.ColumnDefinitions>
-                <DatePicker Text="{Binding StartTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="0" Margin="30 20 0 0" Foreground="White"/>
+                <DatePicker   Text="{Binding StartTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat=yy-MM-dd}" Grid.Column="0" Margin="30 20 0 0" Foreground="White"/>
                 <DatePicker Text="{Binding EndTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Margin="50 20 0 0" Foreground="White" Grid.ColumnSpan="2"/>
             </Grid>
             <!--ComboBox-->
-            <ComboBox Margin="30 20 0 0"/>
+            <ComboBox Margin="30 20 0 0" Text="Choose ">
+                <ComboBoxItem Height="300">
+                    <ScrollViewer>
+                        
+                        <StackPanel>
+                        <TextBlock Text="Cabin Class" Margin="30  0 0 0 " FontSize="15" FontWeight="Bold"/>
+                        <Grid Height="100" Margin="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="0" Grid.Row="0" Background="Transparent" Content="ECONOMY" BorderThickness="1" BorderBrush="#1e88e5" Foreground="#1e88e5" Margin="0 10 0 0" FontWeight="Bold"/>
+                            <Button Grid.Column="1" Grid.Row="0" Background="Transparent" Content="BUSINESS" BorderThickness="0" Margin="10 10 0 0" FontWeight="Bold"/>
+                            <Button Grid.Column="0" Grid.Row="1" Background="Transparent" Content="PREMIUM ECONOMY" BorderThickness="0" Margin="0 10 0 0" FontWeight="Bold"/>
+                            <Button Grid.Column="1" Grid.Row="1" Background="Transparent" Content="FIRST" BorderThickness="0" Margin="10 10 0 0" FontWeight="Bold"/>
+                        </Grid>
+                        <Separator Background="LightGray" Margin="10 0"/>
+                        <TextBlock Text="Travelers" Margin="20 10 0 0 " FontSize="15" FontWeight="Bold"/>
+                        <!--Adult-->
+                        <Grid Height="50" Margin="20 10 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1.2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width=".5*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Adults" FontSize="15" FontWeight="Bold" VerticalAlignment="Center"/>
+                            <TextBlock Text="18-64" FontSize="10"  VerticalAlignment="Center" Grid.Column="1" Foreground="Gray"/>
+                            <Button Grid.Column="3" Width="20" Height="20" Content="-" Foreground="White" HorizontalAlignment="Right" BorderThickness="0"/>
+                            <TextBlock Text="1" FontSize="15"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="4"/>
+                            <Button Grid.Column="5" Width="20" Height="20" Content="+" HorizontalAlignment="Left" BorderThickness="1" BorderBrush="#1e88e5" Foreground="#1e88e5" Background="Transparent"/>
+                        </Grid>
+                        <Separator Background="LightGray" Margin="10 0"/>
+                        <!--Seniors-->
+                        <Grid Height="50" Margin="20 10 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1.5*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="2.5*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width=".5*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Seniors" FontSize="15" FontWeight="Bold" VerticalAlignment="Center"/>
+                            <TextBlock Text="65+" FontSize="10"  VerticalAlignment="Center" Grid.Column="1" Foreground="Gray"/>
+                            <Button Grid.Column="3" Width="20" Height="20" Content="-" Foreground="White" HorizontalAlignment="Right" BorderThickness="0"/>
+                            <TextBlock Text="0" FontSize="15"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="4"/>
+                            <Button Grid.Column="5" Width="20" Height="20" Content="+" HorizontalAlignment="Left" BorderThickness="1" BorderBrush="#1e88e5" Foreground="#1e88e5" Background="Transparent"/>
+                        </Grid>
+                        <Separator Background="LightGray" Margin="10 0"/>
+                        <!--Youth-->
+                        <Grid Height="50" Margin="20 10 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width=".5*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Youth" FontSize="15" FontWeight="Bold" VerticalAlignment="Center"/>
+                            <TextBlock Text="12-17" FontSize="10"  VerticalAlignment="Center" Grid.Column="1" Foreground="Gray"/>
+                            <Button Grid.Column="3" Width="20" Height="20" Content="-" Foreground="White" HorizontalAlignment="Right" BorderThickness="0"/>
+                            <TextBlock Text="0" FontSize="15"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="4"/>
+                            <Button Grid.Column="5" Width="20" Height="20" Content="+" HorizontalAlignment="Left" BorderThickness="1" BorderBrush="#1e88e5" Foreground="#1e88e5" Background="Transparent"/>
+                        </Grid>
+                        <Separator Background="LightGray" Margin="10 0"/>
+                        <!--Child-->
+                        <Grid Height="50" Margin="20 10 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width=".5*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Child" FontSize="15" FontWeight="Bold" VerticalAlignment="Center"/>
+                            <TextBlock Text="2-11" FontSize="10"  VerticalAlignment="Center" Grid.Column="1" Foreground="Gray"/>
+                            <Button Grid.Column="3" Width="20" Height="20" Content="-" Foreground="White" HorizontalAlignment="Right" BorderThickness="0"/>
+                            <TextBlock Text="0" FontSize="15"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="4"/>
+                            <Button Grid.Column="5" Width="20" Height="20" Content="+" HorizontalAlignment="Left" BorderThickness="1" BorderBrush="#1e88e5" Foreground="#1e88e5" Background="Transparent"/>
+                        </Grid>
+                        <Separator Background="LightGray" Margin="10 0"/>
+                        <!--Seat Infant-->
+                        <Grid Height="50" Margin="20 10 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="2.5*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="1.1*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Seat Infant" FontSize="15" FontWeight="Bold" VerticalAlignment="Center"/>
+                            <TextBlock Text="under 2" FontSize="10"  VerticalAlignment="Center" Grid.Column="1" Foreground="Gray"/>
+                            <Button Grid.Column="3" Width="20" Height="20" Content="-" Foreground="White" HorizontalAlignment="Right" BorderThickness="0"/>
+                            <TextBlock Text="0" FontSize="15"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="4"/>
+                            <Button Grid.Column="5" Width="20" Height="20" Content="+" HorizontalAlignment="Left" BorderThickness="1" BorderBrush="#1e88e5" Foreground="#1e88e5" Background="Transparent"/>
+                        </Grid>
+                        <Separator Background="LightGray" Margin="10 0"/>
+                        <!--Lap Infant-->
+                        <Grid Height="50" Margin="20 10 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="2.4*"/>
+                                <ColumnDefinition Width="0.9*"/>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Lap Infant" FontSize="15" FontWeight="Bold" VerticalAlignment="Center"/>
+                            <TextBlock Text="under 2" FontSize="10"  VerticalAlignment="Center" Grid.Column="1" Foreground="Gray"/>
+                            <Button Grid.Column="3" Width="20" Height="20" Content="-" Foreground="White" HorizontalAlignment="Right" BorderThickness="0"/>
+                            <TextBlock Text="0" FontSize="15"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="4"/>
+                            <Button Grid.Column="5" Width="20" Height="20" Content="+" HorizontalAlignment="Left" BorderThickness="1" BorderBrush="#1e88e5" Foreground="#1e88e5" Background="Transparent"/>
+                        </Grid>
+                    </StackPanel>
+                   
+                    </ScrollViewer>
+                </ComboBoxItem>
+            </ComboBox>
             <!--Search-->
 
 

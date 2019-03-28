@@ -61,9 +61,10 @@ namespace TravelApp.ViewModels
                         ag= res.Agents
                 });
                     _eventAggregator.GetEvent<SendToPlanEvent>().Publish(new PlanFlight
-                    { airport=_selectedIt.DestPlace ,
-                        arriveDate= _selectedIt.Departuredate,
-                        arriveTime = _selectedIt.Departuretime
+                    {   city=_selectedIt.Destcity,
+                        airport =_selectedIt.DestPlace ,
+                        arriveDate= _selectedIt.ArrivalDate,
+                        arriveTime = _selectedIt.Arrival
                     });
                 GoSuccessfullyEvent();
                 }
@@ -112,8 +113,10 @@ namespace TravelApp.ViewModels
                 newo.Departuretime = res.Legs.First(itemm => itemm.Id == newo.OutboundLegId).Departure.Split('T').Last(); ;
                 newo.Departuredate = res.Legs.First(itemm => itemm.Id == newo.OutboundLegId).Departure.Split('T').First(); ;
                 newo.Arrival = res.Legs.First(itemm => itemm.Id == newo.OutboundLegId).Arrival.Split('T').Last();
+                newo.ArrivalDate = res.Legs.First(itemm => itemm.Id == newo.OutboundLegId).Arrival.Split('T').First();
                 newo.OriginPlace = res.Places.First(itemm => itemm.Id == value).Code;
                 newo.DestPlace = res.Places.First(itemm => itemm.Id == value2).Code;
+                newo.Destcity = res.Places.First(itemm => itemm.Id == value2).Name;
                 Application.Current.Dispatcher.Invoke(new Action(() => { Infos.Add(newo); }));
                 //Infos.Add(newo);
 

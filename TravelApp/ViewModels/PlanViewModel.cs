@@ -47,12 +47,14 @@ namespace TravelApp.ViewModels
         public string pla { get; set; }
         public string at { get; set; }
         public string ad { get; set; }
+        public string city { get; set; }
         private void OnGotEvent(PlanFlight obj)
         {
             pla = $"{obj.airport} Airport";
             //planFlight.FlInfo.airport = $"{obj.airport} Airport";
             ad = obj.arriveDate;
             at = obj.arriveTime;
+            city = $"Trip to {obj.city}";
         }
 
         private void OnEditExecute()

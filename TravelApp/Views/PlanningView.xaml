@@ -61,15 +61,15 @@
                 </Grid.ColumnDefinitions>
                 <Image Grid.Row="0" Grid.Column="0"
                    HorizontalAlignment="Center"
-                   Source="Images/customer-service.png" Margin="0 5 0 0"/>
+                   Source="Images/user-image-with-black-background.png" Margin="0 5 0 0"/>
                 <TextBlock Text="Nicat" Grid.Row="1" Grid.Column="0" FontSize="20"
                        HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
-                <TextBlock Text="TRIP TO PARIS" Grid.RowSpan="2" Grid.Column="1" 
+                <TextBlock Text="{Binding city}" Grid.RowSpan="2" Grid.Column="1" 
                        VerticalAlignment="Center" HorizontalAlignment="Center"
                        FontSize="25" Foreground="White"/>
                 <TextBlock Text="$5000" Grid.Row="0" Grid.Column="2" Foreground="LightGray" FontSize="20"
                        VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-                <TextBlock Text="12.03.19" Grid.Row="1" Grid.Column="2" Foreground="White" FontSize="20"
+                <TextBlock Text="{Binding ad}" Grid.Row="1" Grid.Column="2" Foreground="White" FontSize="20"
                        VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Grid>
             <!--Day Buttons-->

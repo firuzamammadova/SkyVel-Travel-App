@@ -11,7 +11,7 @@
               xmlns:local1="clr-namespace:TravelApp.ViewModels"
 
         mc:Ignorable="d"
-        Title="SkyWell" MaxWidth="800" MaxHeight="450"  AllowsTransparency="False"  WindowStartupLocation="CenterScreen">
+        Title="SkyWell" Width="800" Height="450"  AllowsTransparency="False"  WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <DataTemplate DataType="{x:Type local1:FlightViewModel}">
             <local2:FlightView />

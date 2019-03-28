@@ -4,48 +4,86 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TravelApp.Views"
-             
+                xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     >
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/pexels-photo.jpg"></ImageBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
 
+        <Grid Grid.Row="0" Width="700" Height="80">
+            <Border Grid.Column="1" BorderThickness="3" CornerRadius="10" Background="LightBlue" Opacity="0.8" BorderBrush="LightBlue" Margin="5 3 5 3">
+                <StackPanel Orientation="Horizontal" Height="100" VerticalAlignment="Center">
 
-        <ListBox  Name="lb" ItemsSource="{Binding Path=Infos}" SelectedItem="{Binding SelectedIt, Mode=TwoWay}">
-            <ListBox.Background>
-                <ImageBrush ImageSource="Images/pexels-photo.jpg"></ImageBrush>
-            </ListBox.Background>
-            <ListBox.ItemContainerStyle>
-                <Style TargetType="ListBoxItem">
-                    <Setter Property="BorderThickness" Value="1"/>
-                    <Setter Property="BorderBrush" Value="Gray"/>
-                    <Setter Property="Margin" Value="10 10 0 10"/>
-                </Style>
-            </ListBox.ItemContainerStyle>
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                        <StackPanel Height="120" Orientation="Horizontal" VerticalAlignment="Center">
-                            <Image Width="100" Height="80" Source="{Binding Photo}"/>
-                            <StackPanel VerticalAlignment="Center" Width="175">
-                                <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 10" Text="{Binding OriginPlace}" FontSize="15"/>
-                                <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 10" Text="{Binding Departuretime}" FontSize="15"/>
-                            </StackPanel>
-                            <StackPanel Width="100" VerticalAlignment="Center">
-                                <TextBlock HorizontalAlignment="Center"  FontFamily="Segoe UI" Margin="10 18 10 0" Text="{Binding Duration}" FontSize="13" />
-                                <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 0 10 10" Text="{Binding Mode}" FontSize="13"/>
-                            </StackPanel >
-                            <StackPanel Width="175" VerticalAlignment="Center">
-                                <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 10" Text="{Binding DestPlace}" FontSize="15"/>
-                                <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 10" Text="{Binding Arrival}" FontSize="15"/>
-                            </StackPanel>
-                            <StackPanel Width="175" VerticalAlignment="Center">
-                                <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 18 10 0" Text="{Binding Price}" FontSize="15" ></TextBlock>
-                                <TextBlock HorizontalAlignment="Center"  FontFamily="Segoe UI" Margin="10 0 10 10" Text="{Binding Deals}" FontSize="15" ></TextBlock>
-                                <Button Width="80" Foreground="White" BorderBrush="Transparent" Background="#17C434" Margin="10 0 10 10" HorizontalAlignment="Center"  FontFamily="Segoe UI" Height="35" FontSize="15" >Select</Button>
-                            </StackPanel>
+                    <StackPanel VerticalAlignment="Center" >
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Search" Foreground="Green" Width="20" Height="20" Margin="10 5 0 0"/>
+                            <TextBlock FontWeight="Bold" FontFamily="Segoe UI" Text="1" FontSize="15" Margin="0 5 0 0"/>
+                            <TextBlock HorizontalAlignment="Right" FontWeight="Bold" FontFamily="Segoe UI" Text="2" FontSize="15" Margin="550 5 0 0" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+
+                            <TextBlock FontWeight="Bold" FontFamily="Segoe UI" Text="2" FontSize="15" Margin="30 0 0 0"/>
+                            <TextBlock FontWeight="Bold" FontFamily="Segoe UI" Text="3" FontSize="15" Margin="15 0 0 0"/>
                         </StackPanel>
                     </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+
+                </StackPanel>
+
+
+
+            </Border>
+
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+
+            <ListBox Name="lb" ItemsSource="{Binding Path=Infos}" SelectedItem="{Binding SelectedIt, Mode=TwoWay}">
+
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="BorderBrush" Value="Gray"/>
+                        <Setter Property="Margin" Value="10 10 0 10"/>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <StackPanel Height="120" Orientation="Horizontal" VerticalAlignment="Center">
+                                <Image Width="100" Height="80" Source="{Binding Photo}"/>
+                                <StackPanel VerticalAlignment="Center" Width="175">
+                                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 10" Text="{Binding OriginPlace}" FontSize="15"/>
+                                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 10" Text="{Binding Departuretime}" FontSize="15"/>
+                                </StackPanel>
+                                <StackPanel Width="100" VerticalAlignment="Center">
+                                    <TextBlock HorizontalAlignment="Center" FontFamily="Segoe UI" Margin="10 18 10 0" Text="{Binding Duration}" FontSize="13" />
+                                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 0 10 10" Text="{Binding Mode}" FontSize="13"/>
+                                </StackPanel >
+                                <StackPanel Width="175" VerticalAlignment="Center">
+                                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 10" Text="{Binding DestPlace}" FontSize="15"/>
+                                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 10" Text="{Binding Arrival}" FontSize="15"/>
+                                </StackPanel>
+                                <StackPanel Width="175" VerticalAlignment="Center">
+                                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 18 10 0" Text="{Binding Price}" FontSize="15" ></TextBlock>
+                                    <TextBlock HorizontalAlignment="Center" FontFamily="Segoe UI" Margin="10 0 10 10" Text="{Binding Deals}" FontSize="15" ></TextBlock>
+                                    <Button Width="80" Foreground="White" BorderBrush="Transparent" Background="#052860" Margin="10 0 10 10" HorizontalAlignment="Center" FontFamily="Segoe UI" Height="35" FontSize="15" >Select</Button>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
     </Grid>
+
+
+
 </UserControl>
