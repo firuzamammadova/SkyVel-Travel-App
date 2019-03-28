@@ -61,7 +61,8 @@
                             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
 
                                 <TextBlock FontWeight="Bold" FontFamily="Segoe UI" Margin="400 25 10 10" Text="{Binding Price}" FontSize="15"/>
-                                <Button  Width="100" Height="40" Foreground="White" BorderBrush="Transparent" Background="#17C434" Margin="10 0 10 10" HorizontalAlignment="Right" FontFamily="Segoe UI" FontSize="15">Select</Button>
+                                <Button  Width="100" Height="40" Foreground="White" BorderBrush="Transparent" Background="#052c6b"  Margin="10 0 10 10" HorizontalAlignment="Right" FontFamily="Segoe UI" FontSize="15">Select</Button>
+                            
                             </StackPanel>
 
                         </StackPanel>

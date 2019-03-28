@@ -26,6 +26,7 @@ namespace TravelApp.Startup
             builder.RegisterType<PlanViewModel>().AsSelf();
             builder.RegisterType<HotelViewModel>().AsSelf();
             builder.RegisterType<SlideViewModel>().AsSelf();
+            builder.RegisterType<FindHotelsViewModel>().AsSelf();
 
             builder.RegisterType<ApplicationViewModel>().AsSelf();
             builder.RegisterType<ConcertViewModel>().AsSelf();

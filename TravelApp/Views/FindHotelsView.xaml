@@ -1,0 +1,151 @@
+﻿<UserControl x:Class="TravelApp.Views.FindHotelsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TravelApp.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <ScrollViewer>
+            <StackPanel>
+                <Grid Height="120" Margin="5 10 5 0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="Images\170575461.jpg" Stretch="Fill" Grid.Row="0" Grid.RowSpan="2"/>
+                    <TextBlock Foreground="#052c6b" Grid.RowSpan="2" Grid.Row="0" Grid.Column="1" FontSize="15" FontWeight="SemiBold" FontStyle="Italic" TextWrapping="Wrap" Margin="10 30 0 0">Hotel : Pensione Guerrato</TextBlock>
+                    <TextBlock Foreground="#052c6b" Grid.RowSpan="2" Grid.Row="0" Grid.Column="1" Margin="10 70 0 0" FontSize="15" FontWeight="SemiBold"  FontStyle="Italic">Address : San Polo 240/A, San Polo, 30125 Venice, Italy</TextBlock>
+                    <Button Command="{Binding ChoCommand}" Content="Choose" Background="#052c6b" Foreground="White" Height="40" FontFamily="Segoe UI" FontSize="15" Width="130" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center"/>
+                    <TextBlock FontSize="20" FontStyle="Italic" FontWeight="SemiBold" FontFamily="Segoe UI" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">Price : 190 $</TextBlock>
+                </Grid>
+
+                <Grid Height="120" Margin="5 10 5 0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="Images\11129086.jpg" Stretch="Fill" Grid.Row="0" Grid.RowSpan="2"/>
+                    <TextBlock Foreground="#052c6b" Grid.RowSpan="2" Grid.Row="0" Grid.Column="1" FontSize="15" FontWeight="SemiBold" FontStyle="Italic" TextWrapping="Wrap" Margin="10 30 0 0">Hotel : Tivoli</TextBlock>
+                    <TextBlock Foreground="#052c6b" Grid.RowSpan="2" Grid.Row="0"  Grid.Column="1" Margin="10 70 0 0" FontSize="15" FontWeight="SemiBold"  FontStyle="Italic" >Address : Crosera San Pantalon-Dorsoduro, 30123 Venice, Italy</TextBlock>
+                    <Button Background="#052c6b" Content="Choose" Height="40" FontFamily="Segoe UI" FontSize="14" Width="130" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center"/>
+                    <TextBlock FontSize="20" Grid.Row="1" FontStyle="Italic" FontWeight="SemiBold" FontFamily="Segoe UI" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">Price : 202 $</TextBlock>
+                </Grid>
+
+                <Grid Height="120" Margin="5 10 5 0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="Images\115470246.jpg" Stretch="Fill" Grid.Row="0" Grid.RowSpan="2"/>
+                    <TextBlock Foreground="#052c6b" Grid.RowSpan="2" Grid.Row="0" Grid.Column="1" FontSize="15" FontWeight="SemiBold" FontStyle="Italic" TextWrapping="Wrap" Margin="10 30 0 0">Hotel : Locanda Silva</TextBlock>
+                    <TextBlock Foreground="#052c6b" Grid.RowSpan="2" Grid.Row="0"  Grid.Column="1" Margin="10 70 0 0" FontSize="15" FontWeight="SemiBold"  FontStyle="Italic" >Address : Castello 4423, Castello, 30122 Venice, Italy</TextBlock>
+                    <Button Content="Choose" Background="#052c6b" Height="40" FontFamily="Segoe UI" FontSize="14" Width="130" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center"/>
+                    <TextBlock FontSize="20" Grid.Row="1" FontStyle="Italic" FontWeight="SemiBold" FontFamily="Segoe UI" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">Price : 250 $</TextBlock>
+                </Grid>
+
+                <Grid Height="120" Margin="5 10 5 0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="Images\81893385.jpg" Stretch="Fill" Grid.Row="0" Grid.RowSpan="2"/>
+                    <TextBlock Foreground="#052c6b" Grid.RowSpan="2" Grid.Row="0" Grid.Column="1" FontSize="15" FontWeight="SemiBold" FontStyle="Italic" TextWrapping="Wrap" Margin="10 30 0 0">Hotel : Antico Mercato</TextBlock>
+                    <TextBlock Foreground="#052c6b" Grid.RowSpan="2" Grid.Row="0"  Grid.Column="1" Margin="10 70 0 0" FontSize="15" FontWeight="SemiBold"  FontStyle="Italic" >Address : Calle prima de la donzella 290, San Polo</TextBlock>
+                    <Button Background="#052c6b" Content="Choose" Height="40" FontFamily="Segoe UI" FontSize="14" Width="130" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center"/>
+                    <TextBlock FontSize="20" Grid.Row="1" FontStyle="Italic" FontWeight="SemiBold" FontFamily="Segoe UI" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">Price : 290 $</TextBlock>
+                </Grid>
+
+                <Grid Height="120" Margin="5 10 5 0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="Images\139875486.jpg" Stretch="Fill" Grid.Row="0" Grid.RowSpan="2"/>
+                    <TextBlock Foreground="#052c6b" Grid.RowSpan="2" Grid.Row="0" Grid.Column="1" FontSize="15" FontWeight="SemiBold" FontStyle="Italic" TextWrapping="Wrap" Margin="10 30 0 0">Hotel :  Il Moro di Venezia</TextBlock>
+                    <TextBlock Foreground="#052c6b" Grid.RowSpan="2" Grid.Row="0"  Grid.Column="1" Margin="10 70 0 0" FontSize="15" FontWeight="SemiBold"  FontStyle="Italic" >Address : Lista di Spagna 152, Cannaregio</TextBlock>
+                    <Button Content="Choose" Background="#052c6b" Height="40" FontFamily="Segoe UI" FontSize="14" Width="130" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center"/>
+                    <TextBlock FontSize="20" Grid.Row="1" FontStyle="Italic" FontWeight="SemiBold" FontFamily="Segoe UI" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">Price : 132 $</TextBlock>
+                </Grid>
+
+                <Grid Height="120" Margin="5 10 5 0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="Images\97919768.jpg" Stretch="Fill" Grid.Row="0" Grid.RowSpan="2"/>
+                    <TextBlock Foreground="#052c6b" Grid.RowSpan="2" Grid.Row="0" Grid.Column="1" FontSize="15" FontWeight="SemiBold" FontStyle="Italic" TextWrapping="Wrap" Margin="10 30 0 0">Hotel : Preference Hualing Tbilisi</TextBlock>
+                    <TextBlock Foreground="#052c6b" Grid.RowSpan="2" Grid.Row="0"  Grid.Column="1" Margin="10 70 0 0" FontSize="15" FontWeight="SemiBold"  FontStyle="Italic" >Address : Jozef Pilsudski Avenue, Tbilisi Sea New City, 0152</TextBlock>
+                    <Button Content="Choose" Background="#052c6b" Height="40" FontFamily="Segoe UI" FontSize="14" Width="130" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center"/>
+                    <TextBlock FontSize="20" Grid.Row="1" FontStyle="Italic" FontWeight="SemiBold" FontFamily="Segoe UI" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">Price : 246 $</TextBlock>
+                </Grid>
+
+
+                <Grid Height="120" Margin="5 10 5 0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="Images\11278896.jpg" Stretch="Fill" Grid.Row="0" Grid.RowSpan="2"/>
+                    <TextBlock Foreground="#052c6b" Grid.RowSpan="2" Grid.Row="0" Grid.Column="1" FontSize="15" FontWeight="SemiBold" FontStyle="Italic" TextWrapping="Wrap" Margin="10 30 0 0">Hotel : Anantara Riverside Bangkok</TextBlock>
+                    <TextBlock Foreground="#052c6b" Grid.RowSpan="2" Grid.Row="0"  Grid.Column="1" Margin="10 70 0 0" FontSize="15" FontWeight="SemiBold"  FontStyle="Italic" >Address : 257 Charoennakorn Road, Samrae, Thonburi</TextBlock>
+                    <Button Content="Choose" Background="#052c6b" Height="40" FontFamily="Segoe UI" FontSize="14" Width="130" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center"/>
+                    <TextBlock FontSize="20" Grid.Row="1" FontStyle="Italic" FontWeight="SemiBold" FontFamily="Segoe UI" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">Price : 332 $</TextBlock>
+                </Grid>
+
+                <Grid Height="120" Margin="5 10 5 0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="Images\116338281.jpg" Stretch="Fill" Grid.Row="0" Grid.RowSpan="2"/>
+                    <TextBlock Foreground="#052c6b" Grid.RowSpan="2" Grid.Row="0" Grid.Column="1" FontSize="15" FontWeight="SemiBold" FontStyle="Italic" TextWrapping="Wrap" Margin="10 30 0 0">Hotel : Riad El Walida</TextBlock>
+                    <TextBlock Foreground="#052c6b" Grid.RowSpan="2" Grid.Row="0"  Grid.Column="1" Margin="10 70 0 0" FontSize="15" FontWeight="SemiBold"  FontStyle="Italic" >Address : 12 Touareg Berrima, 40040 Marrakech, Morocco</TextBlock>
+                    <Button Content="Choose" Background="#052c6b" Height="40" FontFamily="Segoe UI" FontSize="14" Width="130" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center"/>
+                    <TextBlock FontSize="20" Grid.Row="1" FontStyle="Italic" FontWeight="SemiBold" FontFamily="Segoe UI" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">Price : 198 $</TextBlock>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

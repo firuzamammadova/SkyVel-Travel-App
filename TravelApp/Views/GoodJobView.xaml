@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"> Good job, you got your ticket , now let`s look for hotels</TextBlock>
-        <Button VerticalAlignment="Center" HorizontalAlignment="Right"  Background="#052860"  Command="{Binding ConCommand}">Continue</Button>
+        <Label VerticalAlignment ="Center" HorizontalContentAlignment="Center" Width="700" Height="90" FontSize="25" Foreground="Black" FontFamily="Segoe UI" VerticalContentAlignment="Center">Good job, you got your ticket , now let`s look for hotels</Label>
+        <Button Background="#052c6b" Foreground="White" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="70" Width="120" Height="50" Command="{Binding ConCommand}">Continue</Button>
     </Grid>
 </UserControl>

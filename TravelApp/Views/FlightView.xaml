@@ -207,7 +207,7 @@
 
 
             <Button Margin="30 20 0 0" Height="45" Content="Find deals"
-                        Command="{Binding FindCommand}" FontStretch="Normal">
+                        Command="{Binding FindCommand}" FontStretch="Normal" Background="#052c6b" Foreground="White">
 
             </Button>
 

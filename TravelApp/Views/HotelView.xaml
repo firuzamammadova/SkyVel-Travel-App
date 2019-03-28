@@ -4,133 +4,77 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TravelApp.Views"
+              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBox VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="300" Margin="163,10,0,0"/>
-        <Button Content="Search" Command="{Binding SearchCommand}" Height="30" Width="96" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="474,10,0,0"/>
-        <DatePicker HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="200" Margin="10,70,0,0"/>
-        <DatePicker HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="200" Margin="230,70,0,0"/>
-        <ComboBox Height="30" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="460,70,0,0">
-            <ComboBoxItem>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="3*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="1" Text="One Person Room"/>
-                </Grid>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <Grid >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="3*"/>
-                    </Grid.ColumnDefinitions>
-
-                    <TextBlock Grid.Column="1" Text="Two Person Room"/>
-                </Grid>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <Grid >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="3*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="1" Text="Family Rooms"/>
-                </Grid>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <Grid >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="3*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="1" Text="Multiple Rooms"/>
-                </Grid>
-            </ComboBoxItem>
-
-        </ComboBox>
-        <Slider Height="30" Width="180" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,168,0,0"/>
-        <ComboBox Height="30" Width="130" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="230,150,0,0">
-            <ComboBoxItem>
-                <Grid >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="3*"/>
-
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="1" Text="Vacation Rentals"/>
-                </Grid>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <Grid >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="3*"/>
-
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="1" Text="0/1-star hotels"/>
-                </Grid>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <Grid >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="3*"/>
-
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="2" Text="2-star hotels"/>
-                </Grid>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <Grid >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="3*"/>
-
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="3" Text="3-star hotels"/>
-                </Grid>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <Grid >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="3*"/>
-
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="4" Text="4-star hotels"/>
-                </Grid>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <Grid >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="3*"/>
-
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="5" Text="5-star hotels"/>
-                </Grid>
-            </ComboBoxItem>
-            <ComboBoxItem>All Types</ComboBoxItem>
-        </ComboBox>
-        <ComboBox Height="30" Width="140" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="375,150,0,0">
-            <ComboBoxItem>Excellent</ComboBoxItem>
-            <ComboBoxItem>Very Good</ComboBoxItem>
-            <ComboBoxItem>Good</ComboBoxItem>
-            <ComboBoxItem>Fair</ComboBoxItem>
-            <ComboBoxItem>Okay</ComboBoxItem>
-        </ComboBox>
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/photo-1522771739844-6a9f6d5f14af (1).jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60*"/>
+            <ColumnDefinition Width="60*"/>
+            <ColumnDefinition Width="60*"/>
+        </Grid.ColumnDefinitions>
+        <materialDesign:PackIcon Kind="CityVariant" VerticalAlignment="Center" Foreground="White" Grid.Column="0" Grid.Row="0" Height="30"  Width="25" HorizontalAlignment="Right" Margin="0 25 10 0"/>
+        <TextBox materialDesign:HintAssist.Hint="Enter your city" FontStyle="Italic" Foreground="White" FontWeight="SemiBold"  FontSize="16" Grid.Row = "0" Grid.Column="1" Height="36" VerticalAlignment="Center" Name="textBox1" Margin="0,22,0,12" TextAlignment="Center"/>
+        <Button Content="Search" VerticalAlignment="Center" Background="#052c6b" Foreground="White" FontWeight="SemiBold" FontSize="18"  HorizontalAlignment="Left"  Height="40" Width="110" Command="{Binding SearchCommand}" Grid.Row="0" Grid.Column="2" Margin="10,20,0,10"/>
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="0 20 0 0">
+            <DatePicker materialDesign:HintAssist.Hint="Check in" Foreground="White" FontWeight="SemiBold" FontFamily="Segoe UI" FontStyle="Italic" FontSize="16" Height="35" Margin="10 0 0 0" Width="230"/>
+            <Slider Height="30" Width="230" Margin="0 25 0 0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="0 20 0 0">
+            <DatePicker materialDesign:HintAssist.Hint="Check out" Foreground="White" FontWeight="SemiBold" FontStyle="Italic" FontSize="16" Height="35" Width="230"/>
+            <ComboBox materialDesign:HintAssist.Hint="Vacation Rentals" Margin="0 10" FontStyle="Italic" FontSize="16" FontWeight="SemiBold" Foreground="White" Height="30" Width="230">
+                <ComboBoxItem Foreground="Black" FontStyle="Italic">
+                    Vacation Rentals
+                </ComboBoxItem>
+                <ComboBoxItem Foreground="Black" FontStyle="Italic">
+                    0/1-star hotels
+                </ComboBoxItem>
+                <ComboBoxItem Foreground="Black" FontStyle="Italic">
+                    "2"-star hotels
+                </ComboBoxItem>
+                <ComboBoxItem Foreground="Black" FontStyle="Italic">
+                    "3"-star hotels
+                </ComboBoxItem>
+                <ComboBoxItem Foreground="Black" FontStyle="Italic">
+                    "4"-star hotels
+                </ComboBoxItem>
+                <ComboBoxItem Foreground="Black" FontStyle="Italic">
+                    "5"-star hotels
+                </ComboBoxItem>
+                <ComboBoxItem Foreground="Black" FontStyle="Italic">
+                    All Types
+                </ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="2" Margin="0 20 0 0">
+            <ComboBox materialDesign:HintAssist.Hint="One person room" FontSize="16" FontFamily="Segoe UI" FontStyle="Italic" Foreground="White" FontWeight="SemiBold" Height="35" Margin="0 0 10 0" Width="230">
+                <ComboBoxItem  Foreground="Black" FontStyle="Italic">
+                    One Person Room
+                </ComboBoxItem >
+                <ComboBoxItem  Foreground="Black" FontStyle="Italic">
+                    Two Person Room
+                </ComboBoxItem>
+                <ComboBoxItem  Foreground="Black" FontStyle="Italic">
+                    Family Rooms
+                </ComboBoxItem>
+                <ComboBoxItem  Foreground="Black" FontStyle="Italic">
+                    Multiple Rooms
+                </ComboBoxItem>
+            </ComboBox>
+            <ComboBox materialDesign:HintAssist.Hint="Excellent" FontSize="16" Foreground="White" FontWeight="SemiBold" FontStyle="Italic" Height="30" Margin="0 10 10 0 " Width="230">
+                <ComboBoxItem  Foreground="Black" FontStyle="Italic">Excellent</ComboBoxItem>
+                <ComboBoxItem  Foreground="Black" FontStyle="Italic">Very Good</ComboBoxItem>
+                <ComboBoxItem  Foreground="Black" FontStyle="Italic">Good</ComboBoxItem>
+                <ComboBoxItem  Foreground="Black" FontStyle="Italic">Fair</ComboBoxItem>
+                <ComboBoxItem  Foreground="Black" FontStyle="Italic">Okay</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
     </Grid>
 </UserControl>

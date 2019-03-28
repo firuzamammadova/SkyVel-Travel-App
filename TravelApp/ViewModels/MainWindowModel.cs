@@ -22,6 +22,7 @@ namespace TravelApp.ViewModels
 		public SlideViewModel SlideViewModel { get; }
 		public GoodJobViewModel goodJobViewModel { get; }
 		public FindDeals2ViewModel FindDeals2ViewModel { get; }
+		public FindHotelsViewModel FindHotelViewModel { get; }
 		//public PlanViewModel PlanViewModel { get; }
 
 		public IPageViewModel currentView;
@@ -57,8 +58,10 @@ namespace TravelApp.ViewModels
             FindDealsViewModel findDealsViewModel,
             GoodJobViewModel goodjobViewModel,
             PlanViewModel planViewModel,
+            FindHotelsViewModel findHotelsViewModel,
             FindDeals2ViewModel findDeals2ViewModel)
 		{
+            FindHotelViewModel = findHotelsViewModel;
             goodJobViewModel = goodjobViewModel;
             FindDeals2ViewModel = findDeals2ViewModel;
             FindDealsViewModel = findDealsViewModel;
@@ -70,6 +73,7 @@ namespace TravelApp.ViewModels
 			FlightViewModel = flightViewModel ;
 			HotelViewModel = hotelViewModel;
             PlanViewModel = planViewModel;
+            FindHotelViewModel.ChoSuccessfullyEvent += new FindHotelsViewModel.ChoSuccessfullyHandler(myChoSuccessfullyHandler);
             goodJobViewModel.ConSuccessfullyEvent += new GoodJobViewModel.ConSuccessfullyHandler(myConSuccesfullyHandler);
             FindDeals2ViewModel.GoodJobSuccessfullyEvent += new FindDeals2ViewModel.GoodJobSuccessfullyHandler(mygooddoneSuccesfullyHandler);
             FindDealsViewModel.GoSuccessfullyEvent += new FindDealsViewModel.GoSuccessfullyHandler(mygosuccesfullyHandler);
@@ -92,6 +96,11 @@ namespace TravelApp.ViewModels
 		//450 800
 		}
 
+        private void myChoSuccessfullyHandler()
+        {
+            CurrentView = ApplicationViewModel;
+        }
+
         private void myFlsuccesfullyHandler()
         {
             CurrentView = FlightViewModel;
@@ -109,8 +118,8 @@ namespace TravelApp.ViewModels
 
         private void myConSuccesfullyHandler()
         {
-            //CurrentView = HotelViewModel;
-            CurrentView = PlanViewModel;
+            CurrentView = HotelViewModel;
+           // CurrentView = PlanViewModel;
         }
 
         private void mygooddoneSuccesfullyHandler()
@@ -137,10 +146,10 @@ namespace TravelApp.ViewModels
         {
             CurrentView = RegisterViewModel;
         }
-
+        
         private void mySearchHandler()
 		{
-			CurrentView = ApplicationViewModel;
+			CurrentView = FindHotelViewModel;
 		}
 
 		private void myStartHandler()

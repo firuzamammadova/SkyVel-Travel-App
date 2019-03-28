@@ -119,6 +119,7 @@
     <Compile Include="ViewModels\ConcertViewModel.cs" />
     <Compile Include="ViewModels\FindDeals2ViewModel.cs" />
     <Compile Include="ViewModels\FindDealsViewModel.cs" />
+    <Compile Include="ViewModels\FindHotelsViewModel.cs" />
     <Compile Include="ViewModels\FlightViewModel.cs" />
     <Compile Include="ViewModels\GoodJobViewModel.cs" />
     <Compile Include="ViewModels\HotelViewModel.cs" />
@@ -145,6 +146,9 @@
     </Compile>
     <Compile Include="Views\FindDeals2View.xaml.cs">
       <DependentUpon>FindDeals2View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FindHotelsView.xaml.cs">
+      <DependentUpon>FindHotelsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\FlightView.xaml.cs">
       <DependentUpon>FlightView.xaml</DependentUpon>
@@ -204,6 +208,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\FindDeals2View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FindHotelsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -344,6 +352,19 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Views\Images\user-image-with-black-background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Images\11129086.jpg" />
+    <Resource Include="Views\Images\11278896.jpg" />
+    <Resource Include="Views\Images\115470246.jpg" />
+    <Resource Include="Views\Images\116338281.jpg" />
+    <Resource Include="Views\Images\139875486.jpg" />
+    <Resource Include="Views\Images\170575461.jpg" />
+    <Resource Include="Views\Images\48858134.jpg" />
+    <Resource Include="Views\Images\81893385.jpg" />
+    <Resource Include="Views\Images\97919768.jpg" />
+    <Resource Include="Views\Images\photo-1522771739844-6a9f6d5f14af %281%29.jpg" />
+    <Content Include="Views\Images\photo-1522771739844-6a9f6d5f14af.jfif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />

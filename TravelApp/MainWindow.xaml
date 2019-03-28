@@ -16,6 +16,9 @@
         <DataTemplate DataType="{x:Type local1:FlightViewModel}">
             <local2:FlightView />
         </DataTemplate>
+         <DataTemplate DataType="{x:Type local1:FindHotelsViewModel}">
+            <local2:FindHotelsView />
+        </DataTemplate>
         <DataTemplate DataType="{x:Type local1:GoodJobViewModel}">
             <local2:GoodJobView />
         </DataTemplate>
