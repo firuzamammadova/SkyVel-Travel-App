@@ -44,6 +44,12 @@ xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Inte
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-250"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
             </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="listViewItem5">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-250"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-250"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="button">
                 <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
@@ -126,7 +132,7 @@ xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Inte
                         <Button Content="Start" Foreground="Wheat" Margin="10" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Command="{Binding StCommand}" />
                     </StackPanel>
                 </ListViewItem>
-                <ListViewItem x:Name="listViewItem3" Height="50" RenderTransformOrigin="0.5,0.5">
+                <ListViewItem x:Name="listViewItem1" Height="50" RenderTransformOrigin="0.5,0.5">
                     <ListViewItem.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -158,7 +164,7 @@ xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Inte
                         <Button Command="{Binding HotelCommand}" Content="Hotel" Foreground="Wheat" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10" VerticalAlignment="Center"/>
                     </StackPanel>
                 </ListViewItem>
-                <ListViewItem x:Name="listViewItem1" Height="50" RenderTransformOrigin="0.5,0.5">
+                <ListViewItem x:Name="listViewItem3" Height="50" RenderTransformOrigin="0.5,0.5">
                     <ListViewItem.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -174,7 +180,7 @@ xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Inte
                         <Button Content="Entetainment" Foreground="Wheat" Margin="10" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Command="{Binding EntCommand}"/>
                     </StackPanel>
                 </ListViewItem>
-                <ListViewItem x:Name="listViewItem5" Height="50" RenderTransformOrigin="0.5,0.5">
+                <ListViewItem x:Name="listViewItem4" Height="50" RenderTransformOrigin="0.5,0.5">
                     <ListViewItem.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -190,7 +196,7 @@ xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Inte
                         <Button Content="Plan" Foreground="Wheat" Margin="10" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Command="{Binding PlanCommand}"/>
                     </StackPanel>
                 </ListViewItem>
-                <ListViewItem x:Name="listViewItem4" Height="55" RenderTransformOrigin="0.5,0.5">
+                <ListViewItem x:Name="listViewItem5" Height="55" RenderTransformOrigin="0.5,0.5">
                     <ListViewItem.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>

@@ -20,7 +20,7 @@
                 <TextBlock  FontWeight="Bold" FontFamily="Segoe UI" Margin="2 10 2 2" Text="Searching" FontSize="15"/>
             </StackPanel>
         </Grid>
-        <TextBlock Grid.Row="0" FontWeight="Bold" FontFamily="Segoe UI" Text="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" />
+        <TextBlock Grid.Row="0" FontWeight="Bold" FontFamily="Segoe UI" Text=" Hotels in Venecia" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" />
         <ListBox Grid.Row="2"  ItemsSource="{Binding Path=Hotels}" >
             <!--<ListBox.ItemTemplate>
                 <DataTemplate>

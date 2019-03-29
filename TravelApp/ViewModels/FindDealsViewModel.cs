@@ -21,7 +21,8 @@ namespace TravelApp.ViewModels
     {
 
         private IEventAggregator _eventAggregator;
-       
+        public int hei { get; set; }
+
         public FindDealsViewModel(IEventAggregator eventAggregator)
         {
             _eventAggregator = eventAggregator;
@@ -30,7 +31,7 @@ namespace TravelApp.ViewModels
             _eventAggregator.GetEvent<PostEvent>().Subscribe(OnPostedEvent);
             Itineraries = new ObservableCollection<Itinerary>();
             Infos = new ObservableCollection<Useful>();
-
+            hei = 40;
         }
 
         private bool OnGoCanExecute()
@@ -85,6 +86,7 @@ namespace TravelApp.ViewModels
             thread = new Thread(() => { load(); });
             //thread.IsBackground = false;
             thread.Start();
+            
             //load();
         }
         private void load()

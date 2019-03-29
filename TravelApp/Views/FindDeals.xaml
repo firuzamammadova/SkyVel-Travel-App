@@ -24,14 +24,14 @@
                     <StackPanel VerticalAlignment="Center" >
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Search" Foreground="Green" Width="20" Height="20" Margin="10 5 0 0"/>
-                            <TextBlock FontWeight="Bold" FontFamily="Segoe UI" Text="1" FontSize="15" Margin="0 5 0 0"/>
-                            <TextBlock HorizontalAlignment="Right" FontWeight="Bold" FontFamily="Segoe UI" Text="2" FontSize="15" Margin="550 5 0 0" />
+                            <TextBlock FontWeight="Bold" FontFamily="Segoe UI" Text="{Binding PlInfo}" FontSize="15" Margin="0 5 0 0"/>
+                            <TextBlock HorizontalAlignment="Right" FontWeight="Bold" FontFamily="Segoe UI" Text="{Binding dateInfo}" FontSize="15" Margin="550 5 0 0" />
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal">
 
-                            <TextBlock FontWeight="Bold" FontFamily="Segoe UI" Text="2" FontSize="15" Margin="30 0 0 0"/>
-                            <TextBlock FontWeight="Bold" FontFamily="Segoe UI" Text="3" FontSize="15" Margin="15 0 0 0"/>
+                            <TextBlock FontWeight="Bold" FontFamily="Segoe UI" Text="{Binding travInfo}" FontSize="15" Margin="30 0 0 0"/>
+                            <TextBlock FontWeight="Bold" FontFamily="Segoe UI" Text=" Economy" FontSize="15" Margin="15 0 0 0"/>
                         </StackPanel>
                     </StackPanel>
 
@@ -75,7 +75,7 @@
                                 </StackPanel>
                                 <StackPanel Width="100" VerticalAlignment="Center">
                                     <TextBlock HorizontalAlignment="Center" FontFamily="Segoe UI" Margin="10 18 10 0" Text="{Binding Duration}" FontSize="13" />
-                                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 0 10 10" Text="{Binding Mode}" FontSize="13"/>
+                                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Foreground="Red" Margin="10 0 10 10" Text="{Binding Mode}" FontSize="13"/>
                                 </StackPanel >
                                 <StackPanel Width="175" VerticalAlignment="Center">
                                     <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 10" Text="{Binding DestPlace}" FontSize="15"/>
