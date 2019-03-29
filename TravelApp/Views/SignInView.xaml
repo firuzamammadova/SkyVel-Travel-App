@@ -8,122 +8,36 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-
     <Grid>
-        <Rectangle RadiusY="8" 
-                   RadiusX="8" Fill="White"/>
         <Image Source="Images/pexels-photo.jpeg" Stretch="Fill"/>
-        <StackPanel 
-            Margin="20,10,250,10">
-            <Label 
-                Content="Skyvel" 
-                FontFamily="Segoe UI Black" 
-                FontSize="24" 
-                Foreground="White" 
-                Margin="0,10" 
-                VerticalAlignment="Top" 
-                HorizontalAlignment="Left"/>
-            <StackPanel 
-                Margin="0,15" 
-                Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="Account" 
-                                         VerticalAlignment="Center" 
-                                         Foreground="White"/>
-                <PasswordBox PasswordChar="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                    materialDesign:HintAssist.Hint="Username" 
-                         Foreground="White" 
-                         FontWeight="Bold"  
-                         Width="300" 
-                         Margin="5"/>
+        <StackPanel Margin="30,0,250,10">
+            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Skyvel" FontFamily="Segoe UI Black" FontSize="30" Foreground="White" Width="130" FontWeight="Bold" Margin="10,20" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center" Height="20" Width="30" Foreground="White" Margin="0 10 0 0"/>
+                <PasswordBox Margin="0 10" PasswordChar="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="15" materialDesign:HintAssist.Hint="Username" Foreground="White" FontWeight="Bold" Width="320" Height="30"/>
             </StackPanel>
-            <StackPanel 
-                Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="Key" 
-                                         Foreground="White" 
-                                         VerticalAlignment="Center"/>
-                <TextBox Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Password" 
-                             Foreground="White" 
-                             FontWeight="Bold" 
-                             Width="300" 
-                             Margin="5"/>
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Key" Margin="0 15 0 0" Foreground="White" Height="20" Width="30" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Password" FontSize="15" Foreground="White" FontWeight="Bold" Margin="0 20 0 0" Width="320" Height="30"/>
             </StackPanel>
             <Grid>
-                <CheckBox 
-                    Background="White" 
-                    Content="Save password" 
-                    Foreground="White" 
-                    Margin="0 18 0 0"
-                    FontWeight="Bold"/>
-                <Button 
-                    Content="Forget your password?" 
-                    HorizontalAlignment="Right" 
-                    Margin="0,19,211,-1" Width="155" 
-                    FontSize="12" 
-                    Background="Transparent" 
-                    BorderBrush="Transparent" 
-                    FontWeight="Bold"
-                    Foreground="White"/>
+                <CheckBox Margin="10 20 0 0" Background="White" Content="Save password" Foreground="White" FontSize="15" FontWeight="Bold"/>
+                <Button Content="Forget your password?" HorizontalAlignment="Right" Margin="0,20,166,-1" Width="200" FontSize="15" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" Foreground="White"/>
             </Grid>
-            <StackPanel Orientation="Horizontal" 
-                        Margin="0 18 0 0">
-                <Button 
-                    Foreground="White"
-                        HorizontalAlignment="Right"  
-                        Content="LOGIN" 
-                    FontFamily="Segoe UI" 
-                    FontSize="15" 
-                    Width="100" 
-                    Background="#052860" 
-                    BorderBrush="Transparent"
-                    Command="{Binding SignInCommand}"/>
-                
-                <Button 
-                    Foreground="White"
-                    Command="{Binding RegisterCommand}"
-                    HorizontalAlignment="Left" 
-                    Margin="70 0 0 0" 
-                    Content="SIGN UP" 
-                    FontFamily="Segoe UI" 
-                    FontSize="15" 
-                    Width="100" 
-                    Background="#052860" 
-                    BorderBrush="#FF307CD6"/>
+            <StackPanel Orientation="Horizontal" Margin="0 15">
+                <Button Foreground="White" Margin="20" HorizontalAlignment="Right" Content="LOGIN" FontFamily="Segoe UI" FontSize="15" Width="120" Height="40" FontWeight="Bold" Background="#052860" BorderBrush="#052860" Command="{Binding SignInCommand}"/>
+                <Button Foreground="White" Command="{Binding RegisterCommand}" HorizontalAlignment="Left" Margin="50 0 0 0" Content="SIGN UP" FontFamily="Segoe UI" FontSize="15" Width="120" Height="40" FontWeight="Bold" Background="#052860" BorderBrush="#052860"/>
             </StackPanel>
-            <StackPanel 
-                Orientation="Horizontal" 
-                Margin="10,40">
-                <Label 
-                    Content="or Login with" 
-                    Foreground="White" 
-                    VerticalAlignment="Center"/>
-                <Button 
-                    HorizontalAlignment="Center" 
-                    FontFamily="Impact" 
-                    FontSize="18" 
-                    Background="#FF3D56AC" 
-                    BorderBrush="#FF3D56AC">
-                    <materialDesign:PackIcon Kind="Facebook" 
-                                             VerticalAlignment="Center"
-                                             Foreground="White"/>
+            <StackPanel Orientation="Horizontal" Margin="20,20">
+                <Label Content="or Login with" Foreground="White" Width="120" FontWeight="Bold" FontFamily="Segoe UI" Height="35"/>
+                <Button HorizontalAlignment="Center" Width="50" Height="35" Background="#FF3D56AC" BorderBrush="#FF3D56AC">
+                    <materialDesign:PackIcon Kind="Facebook" VerticalAlignment="Center" Foreground="White"/>
                 </Button>
-                <Button HorizontalAlignment="Center" 
-                        FontFamily="Impact" 
-                        FontSize="18" 
-                        Margin="15,0" 
-                        Background="#FF01BAFF" 
-                        BorderBrush="#FF01BAFF">
-                    <materialDesign:PackIcon Kind="Twitter" 
-                                             VerticalAlignment="Center" 
-                                             Foreground="White"/>
+                <Button HorizontalAlignment="Center" Width="50" Height="35" Margin="15,0" Background="#FF01BAFF" BorderBrush="#FF01BAFF">
+                    <materialDesign:PackIcon Kind="Twitter" VerticalAlignment="Center" Foreground="White"/>
                 </Button>
-                <Button HorizontalAlignment="Center"
-                        FontFamily="Impact" 
-                        FontSize="18" 
-                        Background="#FFE05959" 
-                        BorderBrush="#FFE05959">
-                    <materialDesign:PackIcon Kind="GooglePlus" 
-                                             VerticalAlignment="Center" 
-                                             Foreground="White"/>
+                <Button HorizontalAlignment="Center" Width="50" Height="35" Background="#FFE05959" BorderBrush="#FFE05959">
+                    <materialDesign:PackIcon Kind="GooglePlus" VerticalAlignment="Center" Foreground="White"/>
                 </Button>
             </StackPanel>
         </StackPanel>

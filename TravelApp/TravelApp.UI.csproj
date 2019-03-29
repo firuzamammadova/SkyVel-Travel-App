@@ -99,6 +99,9 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WpfAnimatedGif, Version=1.4.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WpfAnimatedGif.1.4.18\lib\net\WpfAnimatedGif.dll</HintPath>
+    </Reference>
     <Reference Include="WPFTextBoxAutoComplete, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\WPFTextBoxAutoComplete.1.0.5\lib\net40\WPFTextBoxAutoComplete.dll</HintPath>
     </Reference>
@@ -355,6 +358,24 @@
     <Resource Include="Views\Images\user-image-with-black-background.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Views\Images\Untitled-1.png" />
+    <Resource Include="Views\Images\08d213af8554399bb00a96bd0be145b5.jpg" />
+    <Resource Include="Views\Images\0b22ccc16e730f88bce83d19d86f2ca1.jpg" />
+    <Resource Include="Views\Images\15534342338_4ec5c42fc8_k_-1.jpg" />
+    <Resource Include="Views\Images\2017-09-29.jpg" />
+    <Resource Include="Views\Images\20181027_123100.jpg" />
+    <Content Include="Views\Images\download.jfif" />
+    <Resource Include="Views\Images\Giardini Papadopoli.jpg" />
+    <Resource Include="Views\Images\greenwich+2.jpg" />
+    <Resource Include="Views\Images\image.jpg" />
+    <Resource Include="Views\Images\iconfinder_icon-58_667369.png" />
+    <Resource Include="Views\Images\five-stars-hotel-signal %281%29.png" />
+    <Content Include="Views\Images\images.jfif" />
+    <Resource Include="Views\Images\IMG_20170517_161006_1.jpg" />
+    <Resource Include="Views\Images\IMG_20180427_175016.jpg" />
+    <Resource Include="Views\Images\iwm-london-imperial-war-museum-london-iwm-0349a75dd6358228e0574a3cb70b0fe2.jpg" />
+    <Resource Include="Views\Images\pexels-photo-776538.jpeg" />
+    <Resource Include="Views\Images\royal-air-force-museum-london-the-exterior-of-the-claude-grahame-white-building-eeb2e0b3d54264a1b742b0d249762b32.jpg" />
     <Resource Include="Views\Images\11129086.jpg" />
     <Resource Include="Views\Images\11278896.jpg" />
     <Resource Include="Views\Images\115470246.jpg" />
@@ -365,6 +386,10 @@
     <Resource Include="Views\Images\81893385.jpg" />
     <Resource Include="Views\Images\97919768.jpg" />
     <Resource Include="Views\Images\photo-1522771739844-6a9f6d5f14af %281%29.jpg" />
+    <Resource Include="Views\Images\pexels-photo-1463171.jpeg" />
+    <Resource Include="Views\Images\photo-1477927849362-0fb1e7d59ee6.jpg" />
+    <Resource Include="Views\Images\photo-1501612780327-45045538702b.jpg" />
+    <Resource Include="Views\Images\LoadingBasketContents.gif" />
     <Content Include="Views\Images\photo-1522771739844-6a9f6d5f14af.jfif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

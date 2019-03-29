@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,108 +13,45 @@ using TravelApp.Views;
 
 namespace TravelApp.ViewModels
 {
-   public class ConcertViewModel : IPageViewModel
+    public class ConcertViewModel : IPageViewModel
     {
         public ObservableCollection<Concertstuff> stuff { get; set; }
         public ConcertViewModel()
-        {  stuff = new ObservableCollection<Concertstuff>();
-              stuff.Add(new Concertstuff()
-            {
-                name="aydan",
-                place="berlin"
-
-            });
-           
-        }
-
-        //private ICommand hiButtonCommand;
-
-        //private ICommand toggleExecuteCommand { get; set; }
-
-        //private bool canExecute = true;
-
-
-
-        //public bool CanExecute
-        //{
-        //    get
-        //    {
-        //        return this.canExecute;
-        //    }
-
-        //    set
-        //    {
-        //        if (this.canExecute == value)
-        //        {
-        //            return;
-        //        }
-
-        //        this.canExecute = value;
-        //    }
-        //}
-
-        //public ICommand ToggleExecuteCommand
-        //{
-        //    get
-        //    {
-        //        return toggleExecuteCommand;
-        //    }
-        //    set
-        //    {
-        //        toggleExecuteCommand = value;
-        //    }
-        //}
-
-        //public ICommand HiButtonCommand
-        //{
-        //    get
-        //    {
-        //        return hiButtonCommand;
-        //    }
-        //    set
-        //    {
-        //        hiButtonCommand = value;
-        //    }
-        //}
-
-        //public ConcertViewModel()
-        //{
-        //    HiButtonCommand = new RelayCommand (no);
-
-        //    //HiButtonCommand = new RelayCommand(ShowMessage, param => this.canExecute);
-        //   toggleExecuteCommand = new RelayCommand(ChangeCanExecute);
-        //}
-
-        //public void ShowMessage(object aydan)
-        //{
-        //    MessageBox.Show(aydan.ToString());
-        //}
-        // public void no(object a)
-        //{
-        //    Window1 b = new Window1();
-        //    b.Show();
-
-
-        //} 
-
-        //public void ChangeCanExecute(object a)
-        //{
-        //    canExecute = !canExecute;
-        //}
-
-        public void Load()
         {
+            stuff = new ObservableCollection<Concertstuff>();
 
-          
-        }
-        public string Name
-        {
-            get
+            bool g = false;
+            string files = @"C:\Users\Aydan\Downloads\SkyVel-master\SkyVel-master\TravelApp\txt.txt";
+            string[] li = new string[4];
+            int i = 0;
+            string line;
+
+            var file = new System.IO.StreamReader(files);
+
+            var lineCount = (File.ReadLines(files).Count()) / 4;
+            while (lineCount != 0)
             {
-                return "Concert";
+                g = true;
+
+                while (i != 4 && (line = file.ReadLine()) != null)
+                {
+
+                    if (i == 2)
+                        li[i] = "    " + line;
+                    else
+                    {
+                        li[i] = "                                                                                                 " + line;
+                    }
+                    i++;
+
+                }
+                stuff.Add(new Concertstuff { photo = li[0], name = li[1], time = li[2], place = li[3] });
+                i = 0;
+                lineCount--;
             }
-        }
 
+        }
+        
 
     }
 }

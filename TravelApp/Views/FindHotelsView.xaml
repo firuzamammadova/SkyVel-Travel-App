@@ -5,10 +5,24 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TravelApp.Views"
              mc:Ignorable="d" 
+                     xmlns:gif="http://wpfanimatedgif.codeplex.com"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <ListBox  ItemsSource="{Binding Path=Hotels}" SelectedItem="{Binding SelectedHot, Mode=TwoWay}" >
-            <ListBox.ItemTemplate>
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="40">
+                <Image  gif:ImageBehavior.AnimatedSource="Images\LoadingBasketContents.gif" Width="30" Height="30"/>
+                <TextBlock  FontWeight="Bold" FontFamily="Segoe UI" Margin="2 10 2 2" Text="Searching" FontSize="15"/>
+            </StackPanel>
+        </Grid>
+        <TextBlock Grid.Row="0" FontWeight="Bold" FontFamily="Segoe UI" Text="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" />
+        <ListBox Grid.Row="2"  ItemsSource="{Binding Path=Hotels}" >
+            <!--<ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Height="120" Margin="5 10 5 0">
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
@@ -18,24 +32,24 @@
                                     <TextBlock Foreground="#052c6b" FontSize="15" FontWeight="SemiBold" FontStyle="Italic" TextWrapping="Wrap" Margin="10 30 0 0" Text="{Binding Name}"></TextBlock>
                                     <TextBlock Foreground="#052c6b" Margin="10 70 0 0" FontSize="15" FontWeight="SemiBold"  FontStyle="Italic" Text="{Binding Address}"></TextBlock>
                                    
-                                    <!--<TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 10" Text="{Binding OriginPlace}" FontSize="15"/>
-                                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 10" Text="{Binding Departuretime}" FontSize="15"/>-->
+                                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 10" Text="{Binding OriginPlace}" FontSize="15"/>
+                                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 10" Text="{Binding Departuretime}" FontSize="15"/>
                                 </StackPanel>
-                                <!--<StackPanel Width="100" VerticalAlignment="Center">
+                                <StackPanel Width="100" VerticalAlignment="Center">
                                     <TextBlock HorizontalAlignment="Center" FontFamily="Segoe UI" Margin="10 18 10 0" Text="{Binding Duration}" FontSize="13" />
                                     <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 0 10 10" Text="{Binding Mode}" FontSize="13"/>
                                 </StackPanel >
                                 <StackPanel Width="175" VerticalAlignment="Center">
                                     <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 10" Text="{Binding DestPlace}" FontSize="15"/>
                                     <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 10" Text="{Binding Arrival}" FontSize="15"/>
-                                </StackPanel>-->
+                                </StackPanel>
                                 <StackPanel Width="175" VerticalAlignment="Center">
                                     <Button HorizontalAlignment="Center" Command="{Binding ChoCommand}" Content="Choose" Background="#052c6b" Foreground="White" Height="40" FontFamily="Segoe UI" FontSize="15" Width="130" Grid.Row="0" Grid.Column="2" />
                                     <TextBlock HorizontalAlignment="Center" FontSize="20" FontStyle="Italic" FontWeight="SemiBold" FontFamily="Segoe UI" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Text="{Binding Price}"></TextBlock>
                               
-                                    <!--<TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 18 10 0" Text="{Binding Price}" FontSize="15" ></TextBlock>
+                                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 18 10 0" Text="{Binding Price}" FontSize="15" ></TextBlock>
                                     <TextBlock HorizontalAlignment="Center" FontFamily="Segoe UI" Margin="10 0 10 10" Text="{Binding Deals}" FontSize="15" ></TextBlock>
-                                    <Button Width="80" Foreground="White" BorderBrush="Transparent" Background="#052860" Margin="10 0 10 10" HorizontalAlignment="Center" FontFamily="Segoe UI" Height="35" FontSize="15" >Select</Button>-->
+                                    <Button Width="80" Foreground="White" BorderBrush="Transparent" Background="#052860" Margin="10 0 10 10" HorizontalAlignment="Center" FontFamily="Segoe UI" Height="35" FontSize="15" >Select</Button>
                                 </StackPanel>
                             </StackPanel>
                         </StackPanel>
@@ -50,6 +64,33 @@
                         </StackPanel>
 
                     </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>-->
+
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="BorderBrush" Value="Gray"/>
+                    <Setter Property="Margin" Value="10 10 0 10"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <StackPanel Height="120" Orientation="Horizontal" VerticalAlignment="Center">
+                            <Image Width="100" Stretch="Fill" Height="80" Source="{Binding photo}"/>
+                            <StackPanel VerticalAlignment="Center" Width="500">
+                                <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 10" Text="{Binding Name}" FontSize="15"/>
+                                <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI" Margin="10 10" Text="{Binding Address}" FontSize="15"/>
+                            </StackPanel>
+                            <StackPanel VerticalAlignment="Center">
+                                <TextBlock HorizontalAlignment="Center" FontSize="20" FontStyle="Italic" FontWeight="SemiBold" FontFamily="Segoe UI" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Text="{Binding Price}"></TextBlock>
+                                <Button HorizontalAlignment="Center" Command="{Binding ChoCommand}" Content="Choose" Background="#052c6b" Foreground="White" Height="40" FontFamily="Segoe UI" FontSize="15" Width="130" />
+
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

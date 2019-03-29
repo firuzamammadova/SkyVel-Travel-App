@@ -1,88 +1,61 @@
-﻿using System;
+﻿using Prism.Commands;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using TravelApp.Model;
 
 namespace TravelApp.ViewModels
 {
-    class ParkViewModel:IPageViewModel
+    public class ParkViewModel : IPageViewModel
     {
-        public string Name
+        public ObservableCollection<parkstuff> stuff { get; set; }
+        public ICommand SelectCommand { get; set; }
+        public ParkViewModel()
         {
-            get
+
+            stuff = new ObservableCollection<parkstuff>();
+
+            bool g = false;
+            string files = @"C:\Users\Aydan\Downloads\SkyVel-master\SkyVel-master\TravelApp\txtp.txt";
+            string[] li = new string[4];
+            int i = 0;
+            string line;
+            SelectCommand = new DelegateCommand(OnSelectExecute, OnSelectCanExecute);
+            var file = new System.IO.StreamReader(files);
+
+            var lineCount = (File.ReadLines(files).Count()) / 4;
+            while (lineCount != 0)
             {
-                return "Park";
-            }
-        }
+                g = true;
 
-
-
-
-        private ICommand hiButtonCommand;
-
-        private ICommand toggleExecuteCommand { get; set; }
-
-        private bool canExecute = true;
-
-
-
-        public bool CanExecute
-        {
-            get
-            {
-                return this.canExecute;
-            }
-
-            set
-            {
-                if (this.canExecute == value)
+                while (i != 4 && (line = file.ReadLine()) != null)
                 {
-                    return;
+
+                    li[i] = "    " + line;
+
+                    i++;
+
                 }
-
-                this.canExecute = value;
+                stuff.Add(new parkstuff { photo = li[0], time = li[1], adress = li[2], name = li[3] });
+                i = 0; g = false;
+                lineCount--;
             }
         }
 
-        public ICommand ToggleExecuteCommand
+        private bool OnSelectCanExecute()
         {
-            get
-            {
-                return toggleExecuteCommand;
-            }
-            set
-            {
-                toggleExecuteCommand = value;
-            }
+            return true;
         }
 
-        public ICommand HiButtonCommand
+        private void OnSelectExecute()
         {
-            get
-            {
-                return hiButtonCommand;
-            }
-            set
-            {
-                hiButtonCommand = value;
-            }
-        }
-
-       
-
-        public void ShowMessage(object aydan)
-        {
-            MessageBox.Show(aydan.ToString());
-        }
-     
-        
-
-        public void ChangeCanExecute(object a)
-        {
-            canExecute = !canExecute;
+          //  throw new NotImplementedException();
         }
     }
 }

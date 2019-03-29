@@ -63,6 +63,8 @@
     <Compile Include="Itinerary.cs" />
     <Compile Include="Leg.cs" />
     <Compile Include="ListPlaces.cs" />
+    <Compile Include="musstuff.cs" />
+    <Compile Include="parkstuff.cs" />
     <Compile Include="Passenger.cs" />
     <Compile Include="Place.cs" />
     <Compile Include="PlanFlight.cs" />
@@ -70,6 +72,7 @@
     <Compile Include="PricingOption.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="resstuff.cs" />
     <Compile Include="Segment.cs" />
     <Compile Include="Traveller.cs" />
     <Compile Include="Useful.cs" />

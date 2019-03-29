@@ -7,48 +7,15 @@
              xmlns:local="clr-namespace:TravelApp.Views"
              xmlns:viewModel = "clr-namespace:TravelApp.ViewModels" 
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <!--<Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition />
-            <RowDefinition Height="30" />
-        </Grid.RowDefinitions>
-        <Label Grid.Row="0" Content="PLAN YOUR DAYS"/>
-        <TextBlock Grid.Row="1"/>
-        <ScrollViewer Grid.Row="2">
-            <ItemsControl ItemsSource="{Binding Path=plans}" Name="llist">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
+             d:DesignHeight="1000" d:DesignWidth="800">
 
-                            <CheckBox  Grid.Column="0" />
-                            <TextBox IsEnabled="{Binding RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}, Path=DataContext.Editable , Mode=TwoWay}" Background="White" FontWeight="Bold"  Foreground="Red" Grid.Column="1" Text="{Binding place}" />
-                            <TextBox IsEnabled="False" Grid.Column="2" Text="{Binding time}"/>
-                            <TextBox Grid.Column="3"  Text="{Binding price}"/>
-                            <Button Grid.Column="4" Content="Edit" Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}, Path=DataContext.EditCommand}" />
-
-                        </Grid>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-        </ScrollViewer>
-        <Button Grid.Row="3" Content="Add" Command="{Binding AddCommand}" />
-    </Grid>-->
     <Grid>
-        <StackPanel>
+        <ScrollViewer>
+            <StackPanel>
             <StackPanel.Background>
                 <ImageBrush ImageSource="Images/paris.jpg"/>
             </StackPanel.Background>
-            <!--About-->
+           
             <Grid Height="100">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -113,7 +80,7 @@
                 </Border>
             </Grid>
             <!--Flight Listbox-->
-            <Grid Height="100" Margin="5 10 5 0">
+            <Grid Height="100" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="5*"/>
@@ -145,7 +112,7 @@
                 </ListBox>
             </Grid>
             <!--Museum Listbox-->
-            <Grid Height="100" Margin="5 10 5 0">
+            <Grid Height="150" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="5*"/>
@@ -188,7 +155,7 @@
                 </ListBox>
             </Grid>
             <!--Restaurant Listbox-->
-            <Grid Height="100" Margin="5 55 5 0">
+            <Grid Height="150" Margin="5 55 5 0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="5*"/>
@@ -202,7 +169,7 @@
                                 <ColumnDefinition Width="5*"/>
                             </Grid.ColumnDefinitions>
                             <Image Grid.Column="0" Source="Images/placeholder.png" Width="50" Height="25"/>
-                            <TextBlock Grid.Column="1" Text="{Binding hotname}"
+                            <TextBlock Grid.Column="1" Text="Restaurant"
                                    FontSize="20" VerticalAlignment="Center" Foreground="Black"/>
                         </Grid>
                     </ListBoxItem>
@@ -216,7 +183,59 @@
                             <TextBlock Grid.Column="1" Text="21:13 - 22:12"
                                    FontSize="20" VerticalAlignment="Center"/>
                         </Grid>
-                    </ListBoxItem>   
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="Images/coin.png" Width="50" Height="20"/>
+                            <TextBlock Grid.Column="1" Text="No Information"
+                                   FontSize="20" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ListBoxItem>
+                </ListBox>
+            </Grid>
+            <!--Hotel Listbox-->
+            <Grid Height="150" Margin="5 55 5 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Source="Images/five-stars-hotel-signal (1).png"  Margin="25"/>
+                <ListBox Grid.Column="2" Background="Transparent" BorderThickness="0">
+                    <ListBoxItem>
+                        <Grid>
+                            <Grid>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="5*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="Images/placeholder.png" Width="50" Height="25"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding hotaddress}"
+                                   FontSize="20" VerticalAlignment="Center" Foreground="Black"/>
+                            </Grid>
+                        </Grid>
+                    </ListBoxItem>
+                </ListBox>
+                <ListBox Grid.Column="1" Background="Transparent" BorderThickness="0">
+                    <ListBoxItem>
+                        <Grid>
+                            <Grid>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="5*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="Images/placeholder.png" Width="50" Height="25"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding hotname}"
+                                   FontSize="20" VerticalAlignment="Center" Foreground="Black"/>
+                            </Grid>
+                        </Grid>
+                    </ListBoxItem>
                     <ListBoxItem>
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -224,7 +243,7 @@
                                 <ColumnDefinition Width="5*"/>
                             </Grid.ColumnDefinitions>
                             <Image Grid.Column="0" Source="Images/clock.png" Width="50" Height="20"/>
-                            <TextBlock Grid.Column="1" Text="{Binding hotaddress}"
+                            <TextBlock Grid.Column="1" Text="21:13 - 22:12"
                                    FontSize="20" VerticalAlignment="Center"/>
                         </Grid>
                     </ListBoxItem>
@@ -235,12 +254,14 @@
                                 <ColumnDefinition Width="5*"/>
                             </Grid.ColumnDefinitions>
                             <Image Grid.Column="0" Source="Images/coin.png" Width="50" Height="20"/>
-                            <TextBlock Grid.Column="1" Text="{Binding hotprice}"
+                                <TextBlock Grid.Column="1" Text="{Binding hotprice}"
                                    FontSize="20" VerticalAlignment="Center"/>
                         </Grid>
                     </ListBoxItem>
                 </ListBox>
             </Grid>
+               
         </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>

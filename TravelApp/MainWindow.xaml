@@ -11,12 +11,17 @@
               xmlns:local1="clr-namespace:TravelApp.ViewModels"
 
         mc:Ignorable="d"
-        Title="SkyWell" Width="800" Height="450"  AllowsTransparency="False"  WindowStartupLocation="CenterScreen">
+        Title="SkyVell" Width="800" Height="480" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterScreen">
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="35"/>
+    </WindowChrome.WindowChrome>
+
     <Window.Resources>
         <DataTemplate DataType="{x:Type local1:FlightViewModel}">
             <local2:FlightView />
         </DataTemplate>
-         <DataTemplate DataType="{x:Type local1:FindHotelsViewModel}">
+        <DataTemplate DataType="{x:Type local1:FindHotelsViewModel}">
             <local2:FindHotelsView />
         </DataTemplate>
         <DataTemplate DataType="{x:Type local1:GoodJobViewModel}">
@@ -30,16 +35,16 @@
         </DataTemplate>
         <DataTemplate DataType="{x:Type local1:SignInViewModel}">
             <local2:SignInView />
-        </DataTemplate>      
+        </DataTemplate>
         <DataTemplate DataType="{x:Type local1:PlanViewModel}">
             <local2:PlanningView />
-        </DataTemplate> 
+        </DataTemplate>
         <DataTemplate DataType="{x:Type local1:RegisterViewModel}">
             <local2:RegisterView />
         </DataTemplate>
         <DataTemplate DataType="{x:Type local1:HotelViewModel}">
             <local2:HotelView />
-        </DataTemplate> 
+        </DataTemplate>
         <DataTemplate DataType="{x:Type local1:ApplicationViewModel}">
             <local2:ApplicationView />
         </DataTemplate>
@@ -48,28 +53,22 @@
         </DataTemplate>
 
 
-            <!--<Storyboard x:Key="CloseMenu">
-                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="GridMenu">
-                    <EasingDoubleKeyFrame KeyTime="0" Value="250"/>
-                    <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
-                </DoubleAnimationUsingKeyFrames>
-                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="GridBackground">
-                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
-                    <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
-                </DoubleAnimationUsingKeyFrames>
-            </Storyboard>
-            <Storyboard x:Key="OpenMenu">
-                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="GridMenu">
-                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
-                    <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="250"/>
-                </DoubleAnimationUsingKeyFrames>
-                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="GridBackground">
-                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
-                    <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
-                </DoubleAnimationUsingKeyFrames>
-            </Storyboard>-->
-        
-       
+
+        <DataTemplate DataType="{x:Type local1:ConcertViewModel}">
+            <local2:ConcertView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local1:MuseumViewModel}">
+            <local2:MuseumView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local1:ParkViewModel}">
+            <local2:ParkView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local1:RestaurantViewModel}">
+            <local2:RestaurantView />
+        </DataTemplate>
+
+
+
 
 
     </Window.Resources>
@@ -82,13 +81,31 @@
         </EventTrigger>
     </Window.Triggers>-->
     <Grid >
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="{Binding Zindex}"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid  Panel.ZIndex="99" Grid.Column="0" >
-            <view:SlideView DataContext="{Binding SlideViewModel}" />
+        <Grid.RowDefinitions>
+            <RowDefinition MaxHeight="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Panel.ZIndex="1" VerticalAlignment="Top" Background="Transparent">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Views/Images/Untitled-1.png" Width="35" Height="30" HorizontalAlignment="Left"/>
+                <TextBlock Text="Skyvel" TextAlignment="Center" FontFamily="Segoe UI" Margin="0 5" FontSize="15" Width="60" FontWeight="Bold" Foreground="#052860" Height="30"></TextBlock>
+
+            </StackPanel>
+            <StackPanel MaxHeight="30" VerticalAlignment="Center" HorizontalAlignment="Right" WindowChrome.IsHitTestVisibleInChrome="True" Orientation="Horizontal">
+                <Button Width="30" Height="30" Content="🗕" FontSize="20"  Name="MinimizeButton" Foreground="Black" Padding="0" Click="MinimizeButton_Click"/>
+                <Button Width="30" Height="30" Content="🗖" Name="MaximizeButton" Foreground="Black" Padding="0" Click="MaximizeButton_Click"/>
+                <Button Width="30" Height="30" Content="✖" FontSize="13" Name="CloseButton" Foreground="Black" Padding="0" Click="CloseButton_Click"/>
+            </StackPanel>
         </Grid>
-        <ContentControl Grid.Column="1" Content="{Binding CurrentView}" />
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{Binding Zindex}"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Panel.ZIndex="99" Grid.Column="0"  >
+                <view:SlideView DataContext="{Binding SlideViewModel}" />
+            </Grid>
+            <ContentControl  Grid.Column="1" Content="{Binding CurrentView}" />
+        </Grid>
     </Grid>
 </Window>

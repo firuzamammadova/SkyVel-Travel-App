@@ -6,17 +6,128 @@
         xmlns:local="clr-namespace:TravelApp.Views"
         mc:Ignorable="d"
        >
+
+
+    <UserControl.Resources>
+
+        <Style TargetType="{x:Type local:ParkView}">
+
+
+            <Setter Property="Background" >
+                <Setter.Value>
+                    <ImageBrush ImageSource="Images\15534342338_4ec5c42fc8_k_-1.jpg"></ImageBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="{x:Null}" />
+            <Setter Property="Foreground" Value="#FFFDFDFD" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontFamily" Value="./#Segoe UI" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="4" BorderBrush="DarkOliveGreen" Background="{TemplateBinding Background}">
+                            <Grid>
+                                <Path x:Name="PathIcon" Width="15" Height="25" Stretch="Fill" HorizontalAlignment="Left"/>
+                                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Grid>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#80FFFFFF" />
+                                <Setter Property="Foreground" Value="#FF131313" />
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#FF0C130F" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
     <Grid>
-        <Button VerticalAlignment="Bottom" Command="{Binding HiButtonCommand}" 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
-        CommandParameter="Hai" Content="{Binding HiButtonContent}"
+        <Grid Grid.Row="0">
+            <TextBlock
+  Name="MyChangingColorText"
+  Margin="100 0 0 0" 
+  Width="640" Height="100" FontSize="48" FontStyle="Italic">
+    Park
+                <TextBlock.Foreground>
+                    <SolidColorBrush x:Name="MySolidColorBrush" Color="Maroon" />
+                </TextBlock.Foreground>
 
-                Width="100"
+  <!-- Animates the text block's color. -->
+                <TextBlock.Triggers>
+                    <EventTrigger RoutedEvent="TextBlock.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation 
+            Storyboard.TargetName="MySolidColorBrush"
+            Storyboard.TargetProperty="Color"
+            From="DarkOrange" To="SteelBlue" Duration="0:0:5"
+            AutoReverse="True" RepeatBehavior="Forever" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </TextBlock.Triggers>
+            </TextBlock>
+        </Grid>
+        <Grid Grid.Row="1">
+            <ItemsControl Name="b" ItemsSource="{Binding Path=stuff}">
+                <ItemsControl.Template>
+                    <ControlTemplate>
+                        <ScrollViewer x:Name="ScrollViewer" Padding="{TemplateBinding Padding}">
+                            <ItemsPresenter />
+                        </ScrollViewer>
+                    </ControlTemplate>
+                </ItemsControl.Template>
+                <!-- ItemsPanelTemplate -->
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="4" />
 
-                Height="100"  />
+                    </ItemsPanelTemplate>
 
-        <Button Content="Toggle Can Click" 
+                </ItemsControl.ItemsPanel>
 
-        Command="{Binding ToggleExecuteCommand}"  Width="100" Height="100"/>
+                <!-- ItemTemplate -->
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate >
+                        <Grid  Margin="0 0 6 8">
+                            <Button   Width="230" Height="250"  Command="{Binding SelectCommand}" >
+
+                                <StackPanel >
+                                    <Image  Source="{Binding photo}" Height="150" Width="200"></Image>
+                                    <TextBlock Text="{Binding time}" FontSize="16" ></TextBlock>
+                                    <TextBlock  Text="{Binding adress}" FontSize="16" ></TextBlock>
+                                    <TextBlock  Text="{Binding name}" FontSize="16" ></TextBlock>
+                                    <Button Content="Add" Background="Black" Opacity="0.5"  FontSize="16"/>
+                                </StackPanel>
+
+                            </Button>
+                        </Grid>
+
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+
+            </ItemsControl>
+        </Grid>
+
+
+
     </Grid>
 </UserControl>

@@ -101,6 +101,7 @@ namespace TravelApp.ViewModels
         private void myLogsuccesfullyHandler()
         {
             CurrentView = SignInViewModel;
+            Zindex = 0;
         }
 
         private void myHotelsuccesfullyHandler()

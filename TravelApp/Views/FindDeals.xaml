@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TravelApp.Views"
                 xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:gif="http://wpfanimatedgif.codeplex.com"
     >
     <Grid>
         <Grid.Background>
@@ -12,7 +13,8 @@
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition />
-            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" Width="700" Height="80">
@@ -22,14 +24,14 @@
                     <StackPanel VerticalAlignment="Center" >
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Search" Foreground="Green" Width="20" Height="20" Margin="10 5 0 0"/>
-                            <TextBlock FontWeight="Bold" FontFamily="Segoe UI" Text="{Binding PlInfo}" FontSize="15" Margin="0 5 0 0"/>
-                            <TextBlock HorizontalAlignment="Right" FontWeight="Bold" FontFamily="Segoe UI" Text="{Binding dateInfo}" FontSize="15" Margin="150 5 0 0" />
+                            <TextBlock FontWeight="Bold" FontFamily="Segoe UI" Text="1" FontSize="15" Margin="0 5 0 0"/>
+                            <TextBlock HorizontalAlignment="Right" FontWeight="Bold" FontFamily="Segoe UI" Text="2" FontSize="15" Margin="550 5 0 0" />
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal">
 
-                            <TextBlock FontWeight="Bold" FontFamily="Segoe UI" Text="{Binding travInfo}" FontSize="15" Margin="30 0 0 0"/>
-                           
+                            <TextBlock FontWeight="Bold" FontFamily="Segoe UI" Text="2" FontSize="15" Margin="30 0 0 0"/>
+                            <TextBlock FontWeight="Bold" FontFamily="Segoe UI" Text="3" FontSize="15" Margin="15 0 0 0"/>
                         </StackPanel>
                     </StackPanel>
 
@@ -43,6 +45,14 @@
         </Grid>
 
         <Grid Grid.Row="1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="40">
+                <Image  gif:ImageBehavior.AnimatedSource="Images\LoadingBasketContents.gif" Width="30" Height="30"/>
+                <TextBlock  FontWeight="Bold" FontFamily="Segoe UI" Margin="2 10 2 2" Text="Searching" FontSize="15"/>
+            </StackPanel>
+        </Grid>
+
+
+        <Grid Grid.Row="2">
 
             <ListBox Name="lb" ItemsSource="{Binding Path=Infos}" SelectedItem="{Binding SelectedIt, Mode=TwoWay}">
 
