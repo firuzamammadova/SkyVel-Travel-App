@@ -26,11 +26,22 @@ namespace TravelApp.ViewModels
             _eventAggregator = eventAggregator;
             _eventAggregator.GetEvent<SendToPlanEvent>().Subscribe(OnGotEvent);
             _eventAggregator.GetEvent<LoadEvent>().Subscribe(OnLoadEvent);
+            _eventAggregator.GetEvent<SendHotelToPlan>().Subscribe(SendHotelToPlanEvent);
             plans = new ObservableCollection<PlanningStuff>();
             AddCommand=new DelegateCommand(OnAddExecute, OnAddCanExecute);
             EditCommand=new DelegateCommand(OnEditExecute, OnAddCanExecute);
             Editable = false;
            
+        }
+        public string hotname { get; set; }
+        public string hotaddress { get; set; }
+        public string hotprice { get; set; }
+
+        private void SendHotelToPlanEvent(HotelInfo obj)
+        {
+            hotname = obj.Name;
+            hotprice = obj.Price;
+            hotaddress = obj.Address;
         }
 
         private void OnLoadEvent(int obj)

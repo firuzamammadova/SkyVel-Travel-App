@@ -202,7 +202,7 @@
                                 <ColumnDefinition Width="5*"/>
                             </Grid.ColumnDefinitions>
                             <Image Grid.Column="0" Source="Images/placeholder.png" Width="50" Height="25"/>
-                            <TextBlock Grid.Column="1" Text="Restaurant"
+                            <TextBlock Grid.Column="1" Text="{Binding hotname}"
                                    FontSize="20" VerticalAlignment="Center" Foreground="Black"/>
                         </Grid>
                     </ListBoxItem>
@@ -216,6 +216,17 @@
                             <TextBlock Grid.Column="1" Text="21:13 - 22:12"
                                    FontSize="20" VerticalAlignment="Center"/>
                         </Grid>
+                    </ListBoxItem>   
+                    <ListBoxItem>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="Images/clock.png" Width="50" Height="20"/>
+                            <TextBlock Grid.Column="1" Text="{Binding hotaddress}"
+                                   FontSize="20" VerticalAlignment="Center"/>
+                        </Grid>
                     </ListBoxItem>
                     <ListBoxItem>
                         <Grid>
@@ -224,7 +235,7 @@
                                 <ColumnDefinition Width="5*"/>
                             </Grid.ColumnDefinitions>
                             <Image Grid.Column="0" Source="Images/coin.png" Width="50" Height="20"/>
-                            <TextBlock Grid.Column="1" Text="No Information"
+                            <TextBlock Grid.Column="1" Text="{Binding hotprice}"
                                    FontSize="20" VerticalAlignment="Center"/>
                         </Grid>
                     </ListBoxItem>

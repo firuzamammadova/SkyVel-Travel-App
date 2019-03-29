@@ -113,6 +113,7 @@
     <Compile Include="Event\LoadEvent.cs" />
     <Compile Include="Event\PostEvent.cs" />
     <Compile Include="Event\SelectEvent.cs" />
+    <Compile Include="Event\SendHotelToPlan.cs" />
     <Compile Include="Event\SendToPlanEvent.cs" />
     <Compile Include="Startup\BootStrapper.cs" />
     <Compile Include="ViewModels\ApplicationViewModel.cs" />

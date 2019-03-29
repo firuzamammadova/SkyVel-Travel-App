@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <ListBox  ItemsSource="{Binding Path=Hotels}" >
+        <ListBox  ItemsSource="{Binding Path=Hotels}" SelectedItem="{Binding SelectedHot, Mode=TwoWay}" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Height="120" Margin="5 10 5 0">

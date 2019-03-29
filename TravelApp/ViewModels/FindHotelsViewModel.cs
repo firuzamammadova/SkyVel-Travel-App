@@ -1,4 +1,5 @@
 ﻿using Prism.Commands;
+using Prism.Events;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using TravelApp.Event;
 using TravelApp.Model;
 
 namespace TravelApp.ViewModels
@@ -16,13 +18,42 @@ namespace TravelApp.ViewModels
     public class FindHotelsViewModel : ViewModelBase, IPageViewModel
     {
         public ObservableCollection<HotelInfo> Hotels { get; set; }
+        private IEventAggregator _eventAggregator;
+
         public ICommand ChoCommand { get; set; }
-        public FindHotelsViewModel()
+        public FindHotelsViewModel(IEventAggregator eventAggregator)
         {
+            _eventAggregator = eventAggregator;
+          //  _eventAggregator.GetEvent<SendHotelToPlan>().Subscribe(OnHotelSelectedEvent);
+
             Hotels = new ObservableCollection<HotelInfo>();
             ChoCommand = new DelegateCommand(OnChoExecute, OnChoCanExecute);
             load();
         }
+        private HotelInfo _selectedHot;
+        public HotelInfo SelectedHot
+        {
+            get { return _selectedHot; }
+            set
+            {
+                _selectedHot = value;
+              
+                OnPropertyChanged();
+                if (_selectedHot != null)
+                {
+                    _eventAggregator.GetEvent<SendHotelToPlan>().Publish(new HotelInfo
+                    {
+                         Name = _selectedHot.Name,
+                         Address= _selectedHot.Address,
+                          photo= _selectedHot.photo,
+                          Price= _selectedHot.Price
+                    });
+                 
+                 //   GoSuccessfullyEvent();
+                }
+            }
+        }
+
         private void load()
         {
             Hotels.Add(new HotelInfo
