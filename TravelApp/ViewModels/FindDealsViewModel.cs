@@ -71,9 +71,17 @@ namespace TravelApp.ViewModels
             }
         }
         public Thread thread { get; set; }
-        private void OnPostedEvent(string obj)
+        public string PlInfo { get; set; }
+        public string travInfo { get; set; }
+        public string classInfo { get; set; }
+        public string dateInfo { get; set; }
+        private void OnPostedEvent(PostEventAggregators obj)
         {
-            ms = obj;
+            //{obj.basicflightinfo.Passengers.Count.ToString()}
+            ms = obj.ms;
+            PlInfo = $"{ obj.basicflightinfo.FromLocation} - {obj.basicflightinfo.ToLocation} ";
+            travInfo = $"1 passenger";
+            dateInfo = $"{obj.basicflightinfo.StartTime} \t\b {obj.basicflightinfo.EndTime}";
             thread = new Thread(() => { load(); });
             //thread.IsBackground = false;
             thread.Start();

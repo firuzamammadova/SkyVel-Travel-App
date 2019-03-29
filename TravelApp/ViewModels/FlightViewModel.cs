@@ -81,7 +81,10 @@ namespace TravelApp.ViewModels
         {
 
             create();
-            _eventAggregator.GetEvent<PostEvent>().Publish(ms);
+            _eventAggregator.GetEvent<PostEvent>().Publish(new PostEventAggregators()
+            {    ms = ms,
+                basicflightinfo = flight
+            });
            //  MessageBox.Show(flight.StartTime.ToString("s").Split('T').First());
             //  MessageBox.Show(flight.StartTime.ToString());
 
