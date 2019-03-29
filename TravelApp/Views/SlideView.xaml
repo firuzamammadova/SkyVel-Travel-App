@@ -104,7 +104,7 @@ xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Inte
                         <ImageBrush ImageSource="Images\travel.png"/>
                     </Button.Background>
                 </Button>
-                <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Width="50" Height="50" Margin="10" >
+                <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Command="{Binding logoutCommand}" Width="50" Height="50" Margin="10" >
                     <!--<Image Source="C:\Users\cavid\Desktop\son versiya\TravelApp\Images\info.png" Width="30" Height="30"/>-->
                     <materialDesign:PackIcon Kind="Logout" Foreground="Wheat" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
 
@@ -139,7 +139,7 @@ xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Inte
                         <!--<Image Source="C:\Users\cavid\Desktop\son versiya\TravelApp\Images\airplane-around-earth.png" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>-->
                         <materialDesign:PackIcon Kind="FlightTakeoff" Foreground="Wheat" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
 
-                        <Button Content="Flight" Foreground="Wheat" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10" VerticalAlignment="Center"/>
+                        <Button Content="Flight" Command="{Binding FlCommand}" Foreground="Wheat" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10" VerticalAlignment="Center"/>
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem x:Name="listViewItem2" Height="50" RenderTransformOrigin="0.5,0.5">
