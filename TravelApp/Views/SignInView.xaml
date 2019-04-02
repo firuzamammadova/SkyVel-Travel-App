@@ -14,11 +14,12 @@
             <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Skyvel" FontFamily="Segoe UI Black" FontSize="30" Foreground="White" Width="130" FontWeight="Bold" Margin="10,20" VerticalAlignment="Top" HorizontalAlignment="Left"/>
             <StackPanel Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center" Height="20" Width="30" Foreground="White" Margin="0 10 0 0"/>
-                <PasswordBox Margin="0 10" PasswordChar="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="15" materialDesign:HintAssist.Hint="Username" Foreground="White" FontWeight="Bold" Width="320" Height="30"/>
+                <TextBox Foreground="{Binding Color}" Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="{Binding User}" FontSize="15"  FontWeight="Bold" Margin="0 20 0 0" Width="320" Height="30"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Key" Margin="0 15 0 0" Foreground="White" Height="20" Width="30" VerticalAlignment="Center"/>
-                <TextBox Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Password" FontSize="15" Foreground="White" FontWeight="Bold" Margin="0 20 0 0" Width="320" Height="30"/>
+                <PasswordBox Margin="0 10" PasswordChar="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="15" materialDesign:HintAssist.Hint="Password" Foreground="White" FontWeight="Bold" Width="320" Height="30"/>
+               
             </StackPanel>
             <Grid>
                 <CheckBox Margin="10 20 0 0" Background="White" Content="Save password" Foreground="White" FontSize="15" FontWeight="Bold"/>

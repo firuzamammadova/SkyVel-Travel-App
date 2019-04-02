@@ -1,4 +1,5 @@
-﻿using Prism.Commands;
+﻿using MaterialDesignThemes.Wpf;
+using Prism.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,12 +40,44 @@ namespace TravelApp.ViewModels
 
         public delegate void RegisterSuccessfullyHandler();
 		public event RegisterSuccessfullyHandler RegisterSuccessfullyEvent;
+        public string color = "white";
+
+        public string Color
+        {
+            get { return color; }
+            set
+            {
+                color = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string user = "UserName";
+
+        public string User
+        {
+            get { return user; }
+            set
+            {
+                user = value;
+                OnPropertyChanged();
+            }
+        }
         private void OnSignInExecute()
         {
-           // if (_userDataService.CheckSignIn(_user))
-           // {
+            // if (_userDataService.CheckSignIn(_user))
+            // {
 
-			SignSuccessfullyEvent();
+            if (UserName == null)
+                Color = "red";
+                User = "Please Fill";
+                
+            if (Password == null)
+
+                Password = "Please Fill";
+            if (UserName!=null&&UserName!="Please Fill"&& Password != null)
+               
+                    SignSuccessfullyEvent();
             //}
             //else
             //{
@@ -64,6 +97,7 @@ namespace TravelApp.ViewModels
             {
                 if (value != _user.Username)
                 {
+                    Color = "white";
                     _user.Username = value;
                     OnPropertyChanged();
                 }
@@ -72,6 +106,7 @@ namespace TravelApp.ViewModels
         private User _user = new User();
         public string Password
         {
+
             get { return _user.Password; }
             set
             {

@@ -21,37 +21,64 @@ namespace TravelApp.ViewModels
             stuff = new ObservableCollection<Concertstuff>();
 
             bool g = false;
-            string files = @"C:\Users\Aydan\Downloads\SkyVel-master\SkyVel-master\TravelApp\txt.txt";
+            string files = @"C:\Users\Aydan\Downloads\slide menu\Sky-master\Sky-master\TravelApp\txt.txt";
             string[] li = new string[4];
             int i = 0;
             string line;
 
             var file = new System.IO.StreamReader(files);
+            stuff.Add(new Concertstuff { photo = @"C:\Users\Aydan\Downloads\SkyVel-master\SkyVel-master\TravelApp\Images\37 (1).jpg",
+                name = "Ligabue",
+                time = "14 June 2019 19:00",
+                place = "Stadio San Nicola, Bari, İtalya"
+            });
+            stuff.Add(new Concertstuff { photo = @"C:\Users\Aydan\Downloads\SkyVel-master\SkyVel-master\TravelApp\Images\SkyVel-master.jpg",
+                name = "Vasco Rossi",
+                time ="27 May 21:00",
+                place = "Stadio Comunale G. Teghil, Lignano Sabbiadoro, İtalya" });
+            stuff.Add(new Concertstuff { photo = @"C:\Users\Aydan\Downloads\SkyVel-master\SkyVel-master\TravelApp\Images\37.jpg",
+                name = "Jovanotti",
+                time = "06 July 2019",
+                place = "Spiaggia Bell'Italia, Lignano Sabbiadoro, İtalya"
+            });
 
-            var lineCount = (File.ReadLines(files).Count()) / 4;
-            while (lineCount != 0)
+            stuff.Add(new Concertstuff
             {
-                g = true;
+                photo = @"C:\Users\Aydan\Downloads\SkyVel-master\SkyVel-master\TravelApp\Images\37 (2).jpg",
+                name = "Elton John",
+                time = "07 July 2019 21:30",
+                place = "Mura di Lucca - Viale Carducci, Lucca, İtalya"
+            });
 
-                while (i != 4 && (line = file.ReadLine()) != null)
-                {
+            stuff.Add(new Concertstuff
+            {
+                photo = @"C:\Users\Aydan\Downloads\SkyVel-master\SkyVel-master\TravelApp\Images\37 (3).jpg",
+                name = "Sting",
+                time = "Salı, 30 July 2019",
+                place = "Live Arena - Ex Foro Boario, Padua, İtalya"
+            });
 
-                    if (i == 2)
-                        li[i] = "    " + line;
-                    else
-                    {
-                        li[i] = "                                                                                                 " + line;
-                    }
-                    i++;
+            stuff.Add(new Concertstuff
+            {
+                photo = @"C:\Users\Aydan\Downloads\SkyVel-master\SkyVel-master\TravelApp\Images\37 (4).jpg",
+                name = "Alessandra Amoroso",
+                time = "30 March 2019 21:00",
+                place = "Pala Remo Magetti, Roseto degli Abruzzi,, İtalya"
+            });
 
-                }
-                stuff.Add(new Concertstuff { photo = li[0], name = li[1], time = li[2], place = li[3] });
-                i = 0;
-                lineCount--;
+            stuff.Add(new Concertstuff
+            {
+                photo = @"C:\Users\Aydan\Downloads\SkyVel-master\SkyVel-master\TravelApp\Images\37 (5).jpg",
+                name = "Ultimo",
+                time = "30 March 2019 21:00",
+                place = "Pala Remo Magetti, Roseto degli Abruzzi,, İtalya"
+            });
+            i = 0;
+             
             }
 
         }
         
 
     }
-}
+

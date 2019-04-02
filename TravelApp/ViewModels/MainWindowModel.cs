@@ -15,6 +15,7 @@ namespace TravelApp.ViewModels
 		public HotelViewModel HotelViewModel { get; }
 
 		public ApplicationViewModel ApplicationViewModel { get; set; }
+		public HotelGoodJob HotelGoodJob { get; set; }
 		public ConcertViewModel ConcertViewModel { get; }
 		public PlanViewModel PlanViewModel { get; }
 		public FlightViewModel FlightViewModel { get; }
@@ -59,6 +60,7 @@ namespace TravelApp.ViewModels
             GoodJobViewModel goodjobViewModel,
             PlanViewModel planViewModel,
             FindHotelsViewModel findHotelsViewModel,
+            HotelGoodJob hotelGoodJob,
             FindDeals2ViewModel findDeals2ViewModel)
 		{
             FindHotelViewModel = findHotelsViewModel;
@@ -73,6 +75,7 @@ namespace TravelApp.ViewModels
 			FlightViewModel = flightViewModel ;
 			HotelViewModel = hotelViewModel;
             PlanViewModel = planViewModel;
+           // HotelGoodJob.EEESuccessfullyEvent+=new HotelGoodJob.EEESuccessfullyHandler(ent);
             FindHotelViewModel.ChoSuccessfullyEvent += new FindHotelsViewModel.ChoSuccessfullyHandler(myChoSuccessfullyHandler);
             goodJobViewModel.ConSuccessfullyEvent += new GoodJobViewModel.ConSuccessfullyHandler(myConSuccesfullyHandler);
             FindDeals2ViewModel.GoodJobSuccessfullyEvent += new FindDeals2ViewModel.GoodJobSuccessfullyHandler(mygooddoneSuccesfullyHandler);
@@ -98,6 +101,11 @@ namespace TravelApp.ViewModels
 		//450 800
 		}
 
+        private void ent()
+        {
+            CurrentView = ApplicationViewModel;
+        }
+
         private void myLogsuccesfullyHandler()
         {
             CurrentView = SignInViewModel;
@@ -111,6 +119,7 @@ namespace TravelApp.ViewModels
 
         private void myChoSuccessfullyHandler()
         {
+            //dfvd
             CurrentView = ApplicationViewModel;
         }
 
@@ -163,6 +172,7 @@ namespace TravelApp.ViewModels
         private void mySearchHandler()
 		{
 			CurrentView = FindHotelViewModel;
+            FindHotelViewModel.ho();
 		}
 
 		private void myStartHandler()

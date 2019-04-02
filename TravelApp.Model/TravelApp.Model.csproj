@@ -55,6 +55,7 @@
     <Compile Include="CabinType.cs" />
     <Compile Include="Carrier.cs" />
     <Compile Include="Concertstuff.cs" />
+    <Compile Include="exa.cs" />
     <Compile Include="Flight.cs" />
     <Compile Include="FlightNumbe.cs" />
     <Compile Include="Gender.cs" />

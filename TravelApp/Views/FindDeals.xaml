@@ -18,14 +18,14 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" Width="700" Height="80">
-            <Border Grid.Column="1" BorderThickness="3" CornerRadius="10" Background="LightBlue" Opacity="0.8" BorderBrush="LightBlue" Margin="5 3 5 3">
+            <Border Grid.Column="1" BorderThickness="3" CornerRadius="10" Background="LightBlue" Opacity="0.8" BorderBrush="LightBlue" Margin="5 3 -20 3">
                 <StackPanel Orientation="Horizontal" Height="100" VerticalAlignment="Center">
 
                     <StackPanel VerticalAlignment="Center" >
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Search" Foreground="Green" Width="20" Height="20" Margin="10 5 0 0"/>
-                            <TextBlock FontWeight="Bold" FontFamily="Segoe UI" Text="{Binding PlInfo}" FontSize="15" Margin="0 5 0 0"/>
-                            <TextBlock HorizontalAlignment="Right" FontWeight="Bold" FontFamily="Segoe UI" Text="{Binding dateInfo}" FontSize="15" Margin="550 5 0 0" />
+                            <materialDesign:PackIcon Kind="Search" Foreground="Green" Width="20" Height="20" Margin="10 5 -25 0"/>
+                            <TextBlock FontWeight="Bold" FontFamily="Segoe UI" Text="{Binding PlInfo}" FontSize="15" Margin="15 5 -20 0"/>
+                            <TextBlock HorizontalAlignment="Right" FontWeight="Bold" FontFamily="Segoe UI" Text="{Binding dateInfo}" FontSize="15" Margin="300 5 0 0" />
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal">
@@ -45,7 +45,7 @@
         </Grid>
 
         <Grid Grid.Row="1">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="40">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="{Binding hei}">
                 <Image  gif:ImageBehavior.AnimatedSource="Images\LoadingBasketContents.gif" Width="30" Height="30"/>
                 <TextBlock  FontWeight="Bold" FontFamily="Segoe UI" Margin="2 10 2 2" Text="Searching" FontSize="15"/>
             </StackPanel>

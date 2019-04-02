@@ -126,6 +126,7 @@
     <Compile Include="ViewModels\FindHotelsViewModel.cs" />
     <Compile Include="ViewModels\FlightViewModel.cs" />
     <Compile Include="ViewModels\GoodJobViewModel.cs" />
+    <Compile Include="ViewModels\HotelGoodJob.cs" />
     <Compile Include="ViewModels\HotelViewModel.cs" />
     <Compile Include="ViewModels\IPageViewModel.cs" />
     <Compile Include="ViewModels\MainWindowModel.cs" />
@@ -159,6 +160,9 @@
     </Compile>
     <Compile Include="Views\GoodJobView.xaml.cs">
       <DependentUpon>GoodJobView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HotelGoodJobView.xaml.cs">
+      <DependentUpon>HotelGoodJobView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\HotelView.xaml.cs">
       <DependentUpon>HotelView.xaml</DependentUpon>
@@ -224,6 +228,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\GoodJobView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HotelGoodJobView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -358,12 +366,14 @@
     <Resource Include="Views\Images\user-image-with-black-background.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Views\Images\SkyVel-master.jpg" />
     <Resource Include="Views\Images\Untitled-1.png" />
     <Resource Include="Views\Images\08d213af8554399bb00a96bd0be145b5.jpg" />
     <Resource Include="Views\Images\0b22ccc16e730f88bce83d19d86f2ca1.jpg" />
     <Resource Include="Views\Images\15534342338_4ec5c42fc8_k_-1.jpg" />
     <Resource Include="Views\Images\2017-09-29.jpg" />
     <Resource Include="Views\Images\20181027_123100.jpg" />
+    <Resource Include="Views\Images\37.jpg" />
     <Content Include="Views\Images\download.jfif" />
     <Resource Include="Views\Images\Giardini Papadopoli.jpg" />
     <Resource Include="Views\Images\greenwich+2.jpg" />
@@ -390,6 +400,7 @@
     <Resource Include="Views\Images\photo-1477927849362-0fb1e7d59ee6.jpg" />
     <Resource Include="Views\Images\photo-1501612780327-45045538702b.jpg" />
     <Resource Include="Views\Images\LoadingBasketContents.gif" />
+    <Resource Include="Views\Images\michal-parzuchowski-262847-unsplash %281%29.jpg" />
     <Content Include="Views\Images\photo-1522771739844-6a9f6d5f14af.jfif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

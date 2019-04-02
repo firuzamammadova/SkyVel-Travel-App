@@ -15,13 +15,13 @@
             <RowDefinition Height="8*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="1">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="40">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="{Binding hei}">
                 <Image  gif:ImageBehavior.AnimatedSource="Images\LoadingBasketContents.gif" Width="30" Height="30"/>
                 <TextBlock  FontWeight="Bold" FontFamily="Segoe UI" Margin="2 10 2 2" Text="Searching" FontSize="15"/>
             </StackPanel>
         </Grid>
-        <TextBlock Grid.Row="0" FontWeight="Bold" FontFamily="Segoe UI" Text=" Hotels in Venecia" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" />
-        <ListBox Grid.Row="2"  ItemsSource="{Binding Path=Hotels}" >
+        <TextBlock Grid.Row="0" FontWeight="Bold" FontFamily="Segoe UI" Text=" Hotels in Venecia" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="45" />
+        <ListBox Grid.Row="2"  ItemsSource="{Binding Path=Hotels}" SelectedItem="{Binding SelectedHot}" >
             <!--<ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Height="120" Margin="5 10 5 0">

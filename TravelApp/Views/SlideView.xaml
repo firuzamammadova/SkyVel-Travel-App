@@ -12,7 +12,7 @@ xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Inte
         <Storyboard x:Key="OpenMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="GridMain">
                 <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="250"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.52" Value="250"/>
             </DoubleAnimationUsingKeyFrames>
 
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="StackPanelMenu">
@@ -64,7 +64,7 @@ xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Inte
         <Storyboard x:Key="CloseMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="GridMain">
                 <EasingDoubleKeyFrame KeyTime="0" Value="250"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.45" Value="0"/>
             </DoubleAnimationUsingKeyFrames>
 
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="StackPanelMenu">
@@ -177,7 +177,7 @@ xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Inte
                         <!--<Image Source="C:\Users\cavid\Desktop\son versiya\TravelApp\Images\movie-tickets.png" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>-->
                         <materialDesign:PackIcon Kind="Ticket" Foreground="Wheat" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
 
-                        <Button Content="Entetainment" Foreground="Wheat" Margin="10" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Command="{Binding EntCommand}"/>
+                        <Button Content="Entateirment" Foreground="Wheat" Margin="10" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Command="{Binding EntCommand}"/>
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem x:Name="listViewItem4" Height="50" RenderTransformOrigin="0.5,0.5">
@@ -232,14 +232,38 @@ xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Inte
 
 
             <Button x:Name="ButtonCloseMenu" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" Click="ButtonCloseMenu_Click" Visibility="Collapsed">
-                <materialDesign:PackIcon Kind="Menu" Foreground="#FF3580BF"/>
+                <materialDesign:PackIcon Kind="Menu" Foreground="White"/>
             </Button>
             <Button x:Name="ButtonOpenMenu" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" Click="ButtonOpenMenu_Click">
-                <materialDesign:PackIcon Kind="Menu" Foreground="#FF3580BF"/>
+                <materialDesign:PackIcon Kind="Menu" Foreground="White"/>
+            </Button>
+           
+
+            <!-- buttonstart-->
+            <Button x:Name="ButtonStart" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5,110,0,0" >
+                <materialDesign:PackIcon Kind="Power" Foreground="White" Width="30" Height="30"/>
+            </Button>
+            <!-- buttonflight-->
+            <Button x:Name="Buttonflight" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5,159,0,0" RenderTransformOrigin="0.533,0.5" >
+                <materialDesign:PackIcon Kind="FlightTakeoff" Foreground="White" Width="30" Height="30"/>
+            </Button>
+            <!-- buttonhotel-->
+            <Button x:Name="buttonhotel" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5,208,0,0" RenderTransformOrigin="0.533,0.5" >
+                <materialDesign:PackIcon Kind="Hotel" Foreground="White" Width="30" Height="30" />
+            </Button>
+            <!-- butonentetein-->
+            <Button Command="{Binding EntCommand}" x:Name="buttonentetein" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5,257,0,0" RenderTransformOrigin="0.533,0.5" >
+                <materialDesign:PackIcon  Kind="Ticket" Foreground="White" Width="30" Height="30" />
             </Button>
 
-
-
+            <!-- buttonplan-->
+            <Button x:Name="buttonplan" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5,306,0,0" RenderTransformOrigin="0.533,0.5" >
+                <materialDesign:PackIcon Kind="Assignment" Foreground="White" Width="30" Height="30" />
+            </Button>
+            <!-- buttonsetting-->
+            <Button x:Name="buttonsetting" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5,355,0,0" RenderTransformOrigin="0.533,0.5" >
+                <materialDesign:PackIcon Kind="Settings" Foreground="White" Width="30" Height="30" />
+            </Button>
 
         </Grid>
 

@@ -4,6 +4,7 @@ using Prism.Events;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Net;
@@ -26,10 +27,10 @@ namespace TravelApp.ViewModels
         Flight flight { get; set; }
         string ms { get; set; }
         public ICommand FindCommand { get; set; }
-
+       public ObservableCollection<exa> plc{get;set;}
         public FlightViewModel(IEventAggregator eventAggregator)
         {
-
+            plc = new ObservableCollection<exa>();
             FindCommand = new DelegateCommand(OnFindExecute, OnFindCanExecute);
             flight = new Flight();
             TextEvent += new TextHandler(ListPlaces);
@@ -37,7 +38,8 @@ namespace TravelApp.ViewModels
 
             EndTime = DateTime.Today;
             StartTime = DateTime.Today;
-           // _eventAggregator.GetEvent<PostEvent>().Subscribe(OnOpenFriendDetailView);
+            plc.Add(new exa { from ="ss" });
+            // _eventAggregator.GetEvent<PostEvent>().Subscribe(OnOpenFriendDetailView);
 
 
         }
@@ -71,7 +73,7 @@ namespace TravelApp.ViewModels
 
                 var resultContent = result.Content.ReadAsStringAsync().Result;
 
-                Console.WriteLine(resultContent);
+       
 
 
                 ms = result.Headers.Location.ToString().Split('/').Last();
@@ -110,8 +112,12 @@ namespace TravelApp.ViewModels
             //			//}
             //			MessageBox.Show(lp.Places[0]["PlaceId"]);
         }
-
+       
         public ObservableCollection<Dictionary<string, string>> ListPlacess { get; set; }
+        public bool drp { get; set; } = true;
+        private exa _selectedStudent;
+
+        
         public string Location
         {
             get { return flight.FromLocation; }
@@ -121,6 +127,46 @@ namespace TravelApp.ViewModels
                 {
                     flight.FromLocation = value;
                     OnPropertyChanged();
+            //        plc.Clear();
+            //        var places = Unirest.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/UK/GBP/en-GB/?query=" + flight.FromLocation)
+            //.header("X-RapidAPI-Key", "107dc24922mshbd9bd597451997fp19a55fjsnc869fe1003a4")
+            //.asJson<string>();
+
+            //        lp = JsonConvert.DeserializeObject<ListPlaces>(places.Body);
+            //        foreach (var item in lp.Places)
+            //        {
+            //            plc.Add(new exa { from = item["PlaceName"] });
+            //        }
+            //        this.drp = true;
+                             //< ComboBox IsTextSearchEnabled = "True" IsDropDownOpen = "{Binding drp}"  IsEditable = "True" Background = "Beige" ItemsSource = "{Binding Path=plc}"  Height = "150" Width = "100" >
+
+                             //    < ComboBox.ItemTemplate >
+
+                             //        < DataTemplate >
+
+                             //            < TextBlock Text = "{Binding from}" ></ TextBlock >
+
+                             //         </ DataTemplate >
+
+                             //     </ ComboBox.ItemTemplate >
+
+                             // </ ComboBox >
+
+                             // < !--< ListBox Background = "Beige" ItemsSource = "{Binding Path=plc}" Visibility = "{Binding vibl}" Height = "150" Width = "100" >
+
+                             //               < ListBox.ItemTemplate >
+
+                             //                   < DataTemplate >
+
+                             //                       < TextBlock Text = "{Binding from}" ></ TextBlock >
+
+                             //                    </ DataTemplate >
+
+                             //                </ ListBox.ItemTemplate >
+
+                             //            </ ListBox > -->
+                    //ComboBoxAssist.ClassicMode
+
                 }
             }
         }

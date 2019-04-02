@@ -146,7 +146,7 @@
 
 
                     <DockPanel VerticalAlignment="Center" HorizontalAlignment="Right" Width="140" Height="35">
-                        <Label Width="85" Content="***" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI Semibold" />
+                        <Label Width="85" Content="Info" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI Semibold" />
                         <Image Source="Images\information.png" Width="20" Height="35" Margin="20,0,10,0" />
 
                     </DockPanel>
@@ -157,7 +157,7 @@
 
 
             </Canvas>
-            <Button x:Name="button" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Command="{Binding StartCommand}" Background="Wheat" BorderBrush="Transparent" FontSize="25" FontWeight="Bold" Width="80" Height="80" Margin="559,200,161,170" >
+            <Button x:Name="button" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Command="{Binding StartCommand}" Background="White" BorderBrush="Transparent" FontSize="25" FontWeight="Bold" Width="80" Height="80" Margin="559,200,161,170" >
 
 
                 Start

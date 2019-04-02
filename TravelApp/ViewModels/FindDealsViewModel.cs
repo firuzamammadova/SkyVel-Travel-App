@@ -21,7 +21,19 @@ namespace TravelApp.ViewModels
     {
 
         private IEventAggregator _eventAggregator;
-        public int hei { get; set; }
+
+
+        public int Hei = 0;
+
+        public int hei
+        {
+            get { return Hei; }
+            set
+            {
+                Hei = value;
+                OnPropertyChanged();
+            }
+        }
 
         public FindDealsViewModel(IEventAggregator eventAggregator)
         {
@@ -82,7 +94,12 @@ namespace TravelApp.ViewModels
             ms = obj.ms;
             PlInfo = $"{ obj.basicflightinfo.FromLocation} - {obj.basicflightinfo.ToLocation} ";
             travInfo = $"1 passenger";
-            dateInfo = $"{obj.basicflightinfo.StartTime} \t\b {obj.basicflightinfo.EndTime}";
+            dateInfo = $"{obj.basicflightinfo.StartTime.ToString().Split(' ').First()} \t\b {obj.basicflightinfo.EndTime.ToString().Split(' ').First()}";
+
+            Task.Factory.StartNew(load).ContinueWith(task =>
+            {
+                hei = 0;
+            });
             thread = new Thread(() => { load(); });
             //thread.IsBackground = false;
             thread.Start();

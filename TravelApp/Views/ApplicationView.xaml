@@ -82,35 +82,35 @@
         RenderTransformOrigin="0.557,0.693"
         d:LayoutOverrides="HorizontalAlignment" 
         Background="#50000000"
-                Command="{Binding ParkCommand}" Content="park">
+                Command="{Binding ParkCommand}" Content="Parks">
 
 
         </Button>
 
 
-        <Button Height="50" Width="100" Name="concert"
+        <Button Height="50" Width="110" Name="Concerts"
                  FontWeight="Bold" Foreground="White"        
         BorderBrush="#83D744" BorderThickness="0" 
         RenderTransformOrigin="0.557,0.693"
         d:LayoutOverrides="HorizontalAlignment" 
         Background="#50000000"
-                Command="{Binding ConcertCommand}" HorizontalAlignment="Right">concert</Button>
-        <Button Height="50" Width="100" Name="res" 
+                Command="{Binding ConcertCommand}" HorizontalAlignment="Right">Concerts</Button>
+        <Button Height="50" Width="110" Name="Restaurants" 
                   FontWeight="Bold" Foreground="White"        
         BorderBrush="#83D744" BorderThickness="0" 
         RenderTransformOrigin="0.557,0.693"
         d:LayoutOverrides="HorizontalAlignment" 
         Background="#50000000"
                 
-                Command="{Binding ResCommand}" HorizontalAlignment="Left">res</Button>
-        <Button Height="50" Width="100" Name="museum" 
+                Command="{Binding ResCommand}" HorizontalAlignment="Left">Restaurants</Button>
+        <Button Height="50" Width="110" Name="museum" 
                   FontWeight="Bold" Foreground="White"        
         BorderBrush="#83D744" BorderThickness="0" 
         RenderTransformOrigin="0.557,0.693"
         d:LayoutOverrides="HorizontalAlignment" 
         Background="#50000000"
                 
-                Command="{Binding MuseumCommand}" VerticalAlignment="Bottom">museum</Button>
+                Command="{Binding MuseumCommand}" VerticalAlignment="Bottom">Museums</Button>
         <ContentControl Content="{Binding CurrentPageViewModel}" Margin="10,-10,-10,10" />
 
     </Grid>

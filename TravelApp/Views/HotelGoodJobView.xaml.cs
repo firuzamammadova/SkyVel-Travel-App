@@ -1,5 +1,4 @@
-﻿using Prism.Events;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,21 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TravelApp.ViewModels;
 
 namespace TravelApp.Views
 {
     /// <summary>
-    /// Interaction logic for FlightView.xaml
+    /// Interaction logic for HotelGoodJobView.xaml
     /// </summary>
-    public partial class FlightView : UserControl
+    public partial class HotelGoodJobView : UserControl
     {
-        public FlightView()
+        public HotelGoodJobView()
         {
             InitializeComponent();
-           
-            
-
         }
     }
 }
